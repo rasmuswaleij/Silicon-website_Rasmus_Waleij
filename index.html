@@ -75,9 +75,9 @@
       </div>
     </header>
     <main>
-      <section class="padding-block-400 gradient">
+      <section class="padding-block-900 gradient">
         <div class="container gradient">
-          <div class="even-columns">
+          <div class="even-columns" style="gap: 7em">
             <div class="flow flex-column-justify">
               <h1 class="fs-primary-heading fw-extra-bold">
                 Manage All Your Money in One App
@@ -122,18 +122,20 @@
                 </button>
               </div>
             </div>
-            <div class="desktop">
-              <img
-                src="/assets/images/iPhone 12 Pro.svg"
-                alt=""
-                id="firstPhone"
-              />
+            <div class="desktop manage-iphones">
+              <div>
+                <img
+                  src="/assets/images/iPhone 12 Pro.svg"
+                  alt=""
+                  id="second-phone"
+                />
 
-              <img
-                src="/assets/images/iPhone 12 Pro again.svg"
-                alt=""
-                id="secondPhone"
-              />
+                <img
+                  src="/assets/images/iPhone 12 Pro again.svg"
+                  alt=""
+                  id="first-phone"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -474,28 +476,39 @@
       </section>
       <section class="padding-block-700">
         <div class="container">
-          <div class="even-columns">
+          <div class="even-columns faq-columns">
             <div class="flow">
-              <h2 class="fs-tertiary-heading fw-extra-bold">
+              <h2
+                class="fs-tertiary-heading fw-extra-bold"
+                style="max-width: 70%"
+              >
                 Any questions? Check out the FAQs
               </h2>
               <p class="fs-250">
                 Still have unanswered questions and need to get in touch?
               </p>
-              <div class="desktop">
-                <img src="/assets/images/icon (1).svg" alt="" />
-                <p>Still have questions?</p>
-                <button class="button-faq"><p>Contact us</p></button>
-                <!--Måste fixa pilen på alla knappar-->
-              </div>
-              <div class="desktop">
-                <img src="/assets/images/icon (2).svg" alt="" />
-                <p>Don't like phone calls?</p>
-                <button class="button-faq"><p>Contact us</p></button>
-                <!--Måste fixa pilen på alla knappar-->
+              <div class="flex-gap">
+                <div class="desktop card-faq flow">
+                  <img src="/assets/images/icon (1).svg" alt="" />
+                  <p>Still have questions?</p>
+                  <button class="button-faq flex-gap">
+                    <p class="text-accent-400">Contact us</p>
+                    <img src="/assets/images/icon-r.svg" alt="" />
+                  </button>
+                  <!--Måste fixa pilen på alla knappar-->
+                </div>
+                <div class="desktop card-faq flow">
+                  <img src="/assets/images/icon (2).svg" alt="" />
+                  <p>Don't like phone calls?</p>
+                  <button class="button-faq flex-gap">
+                    <p class="text-system-400">Contact us</p>
+                    <img src="/assets/images/icon-r-green.svg" alt="" />
+                  </button>
+                  <!--Måste fixa pilen på alla knappar-->
+                </div>
               </div>
             </div>
-            <div class="padding-block-700 faq">
+            <div class="faq">
               <!--Måste troligtvis lägga till en bild på en pil längst till höger på alla paragrafer-->
               <div class="faq-question1 flex-row-center">
                 <p>Is any of my personal information stored in the App?</p>
@@ -603,7 +616,7 @@
           </div>
         </div>
       </section>
-      <section>
+      <section class="mobile">
         <div class="container contact-button">
           <button class="button">
             <p class="text-neutral-100 fs-100">Contact us now</p>
@@ -611,27 +624,31 @@
         </div>
       </section>
       <section class="padding-block-700 bg-neutral-150">
-        <div class="container padding-block-700 padding-inline-400 flow">
+        <div
+          class="container padding-block-700 padding-inline-400 flow even-columns"
+          style="gap: 4em"
+        >
           <div class="flex-row-center">
             <div class="bell-div">
               <img src="/assets/images/bell.svg" alt="" class="bell" />
             </div>
-            <h2 class="desktop">
+            <h2 class="desktop fs-quaternary-heading fw-extra-bold">
               Subscribe to our newsletter to stay informed about latest updates
             </h2>
             <h2
-              class="fs-quinary-heading fw-extra-bold"
+              class="fs-quinary-heading fw-extra-bold mobile"
               style="text-align: start"
             >
               Subscribe to our newsletter
             </h2>
           </div>
-          <form style="display: flex; justify-content: center">
+          <form style="display: flex; justify-content: space-between">
             <input
               type="email"
               title="Your Email"
               placeholder="Your email"
               class="email-input"
+              style="width: 100%"
             />
             <!--Lägg till en brevikon på input ovan-->
             <button class="button subscribe">Subscribe</button>
@@ -639,7 +656,10 @@
         </div>
       </section>
     </main>
-    <footer class="footer flex-column-justify">
+    <footer
+      class="footer flex-column-justify padding-block-500"
+      style="margin-top: 2em"
+    >
       <p class="text-align fs-100 text-neutral-600 footer-p">
         © 2024 Silicon. All rights reserved. Credit MadrasThemes
       </p>

@@ -177,6 +177,9 @@ svg {
 .text-accent-400 {
   color: var(--clr-accent-400);
 }
+.text-system-400 {
+  color: var(--clr-system-400);
+}
 .text-accent-300 {
   color: var(--clr-accent-300);
 }
@@ -438,6 +441,22 @@ h3 {
   gap: 1em;
 }
 
+.manage-iphones {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+
+#first-phone {
+  position: relative;
+}
+
+#second-phone {
+  position: absolute;
+  top: 135px;
+  right: 233px;
+}
+
 #discover-more-p {
 }
 
@@ -598,7 +617,6 @@ input:checked + .slider:before {
 }
 
 .desktop {
-  display: block;
 }
 
 .gradient {
@@ -612,6 +630,12 @@ input:checked + .slider:before {
 }
 
 .faq {
+}
+
+.button-faq {
+  background-color: var(--clr-neutral-100);
+  border: none;
+  cursor: pointer;
 }
 
 .faq-question1 {
@@ -708,6 +732,13 @@ input::placeholder {
   border-radius: 0.5em;
 }
 
+.card-faq {
+  border: 1px solid var(--clr-accent-300);
+  border-radius: var(--size-200);
+  gap: 1em;
+  padding: var(--size-600);
+}
+
 .qotation-image {
   border-radius: 0.4em;
   padding-inline: 0.6em;
@@ -735,6 +766,10 @@ input::placeholder {
   .mobile-nav-toggle {
     display: block;
   }
+
+  .faq {
+    padding-block: var(--size-700);
+  }
 }
 
 /*MOBILE AND TABLET BELOW*/
@@ -750,6 +785,10 @@ input::placeholder {
 @media screen and (width > 60em) {
   .mobile {
     display: none;
+  }
+  .faq-columns {
+    grid-template-columns: 2fr 3fr;
+    gap: 6em;
   }
 }
 
@@ -803,4 +842,9 @@ input::placeholder {
   p {
     opacity: 50%;
   }
+}
+
+/*TODO Lägg in en container under som kopplar med .manage-iphones så att 
+top och right beror på om elementet har tillräckligt mycket med yta*/
+@container {
 }
