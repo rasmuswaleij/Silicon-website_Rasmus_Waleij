@@ -299,25 +299,34 @@
       </section>
       <section class="padding-block-300 bg-neutral-150">
         <div class="container padding-block-800 flow how-does-mobile">
-          <h1 class="fs-secondary-heading fw-extra-bold">How Does It Work?</h1>
+          <h1 class="fs-secondary-heading fw-extra-bold text-align">
+            How Does It Work?
+          </h1>
           <div class="even-columns" style="position: relative">
-            <img
-              src="/assets/images/iPhone 12 Pro (5).svg"
-              alt=""
-              class="desktop"
-            />
-            <img
-              src="/assets/images/iPhone 12 Pro (2).svg"
-              alt=""
-              class="desktop"
-            />
-            <img
-              src="assets\images\iphone.svg"
-              alt=""
-              style="position: relative"
-              class="desktop"
-            />
-
+            <!-- TODO Kolla med en lärare hur man kan göra detta utan att behvöa
+             lägga varje img i en egen div -->
+            <div class="iphone-centered">
+              <img
+                src="/assets/images/iPhone 12 Pro (5).svg"
+                alt=""
+                class="desktop"
+              />
+            </div>
+            <div class="iphone-centered">
+              <img
+                src="/assets/images/iPhone 12 Pro (2).svg"
+                alt=""
+                class="desktop"
+              />
+            </div>
+            <div class="iphone-centered">
+              <img
+                src="assets\images\iphone.svg"
+                alt=""
+                style="position: relative"
+                class="desktop"
+              />
+            </div>
             <img
               src="/assets/images/how.svg"
               alt=""
@@ -339,10 +348,10 @@
               class="mobile"
             />
           </div>
-          <h3 class="fs-quaternary-heading fw-bold desktop">
+          <h3 class="fs-quaternary-heading fw-bold desktop text-align">
             Latest transaction history
           </h3>
-          <p class="desktop half-opacity-p">
+          <p class="desktop half-opacity-p text-align narrower-when-wider-p">
             Enim, et amet praesent pharetra. Mi non ante hendrerit amet sed.
             Arcu sociis tristique quisque hac in consectetur condimentum.
           </p>
