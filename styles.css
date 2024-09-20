@@ -1,6 +1,18 @@
+/* TODO extrakurs: Kolla hur det blir när man printar sidan */
+/* TODO ta bort onödig kod */
+/* TODO ta bort alla kommentarer som inte behövs */
+/* TODO flytta inline style från HTML till CSS */
+/* TODO Lägga till en container query som gör att första section blir en column tidigare för annars täcker telefonerna texten */
+
+/* TODO kolla genom hela hemsidan på minsta breddenf ör desktop */
+
 /* --------- ROOT -------- */
 
 :root {
+  * {
+    border: solid 0px black;
+  }
+
   /**COLORS SET FOR LIGHT MODE -> LATER CHANGED FOR DARK IN MEDIA*/
   --clr-system-400: hsl(142, 71%, 45%);
 
@@ -55,6 +67,8 @@
 
   --fs-body: var(--fs-200);
 
+  min-height: 63vh;
+
   --fs-primary-heading: var(--fs-750);
   --fs-secondary-heading: var(--fs-600);
   --fs-tertiary-heading: var(--fs-550);
@@ -63,25 +77,27 @@
 
   --fs-button: var(--fs-100);
 
-  --size-100: 0.25rem;
-  --size-200: 0.5rem;
-  --size-300: 0.75rem;
-  --size-400: 1rem;
-  --size-500: 1.25rem;
-  --size-600: 1.5rem;
-  --size-700: 2.5rem;
-  --size-800: 3.5rem;
-  --size-900: 5rem;
+  --size-100: min(0.25rem);
+  --size-200: min(0.5rem);
+  --size-300: min(0.75rem);
+  --size-400: min(1rem);
+  --size-500: min(1.25rem);
+  --size-600: min(1.5rem);
+  --size-700: min(2.5rem, 3rem);
+  --size-800: min(3.5rem);
+  --size-850: min(3.5rem);
+  --size-900: min(7vw, 6.5rem);
+  --size-950: min(8vw, 8rem);
 }
 
-@media (min-width: 40em) {
+@media (769px > width > 481px) {
   :root {
     --fs-primary-heading: var(--fs-850);
     --fs-secondary-heading: var(--fs-700);
   }
 }
 
-@media (min-width: 50em) {
+@media (width > 768px) {
   :root {
     --fs-primary-heading: var(--fs-900);
     --fs-secondary-heading: var(--fs-800);
@@ -265,7 +281,7 @@ svg {
   line-height: 1.2;
 }
 
-@media screen and (max-width: 50em) {
+@media screen and (width < 769px) {
   .fs-primary-heading {
     text-align: center;
   }
@@ -312,6 +328,12 @@ svg {
   font-size: var(--fs-250);
 }
 
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
 .container {
   --max-width: 1296px;
   --horizontal-padding: 1rem;
@@ -322,19 +344,12 @@ svg {
 
 .flex-gap {
   display: flex;
-  gap: 1em;
+  gap: 3%;
 }
 
 .even-columns {
   display: grid;
   gap: 1rem;
-}
-
-@media screen and (min-width: 60em) {
-  .even-columns {
-    grid-auto-flow: column;
-    grid-auto-columns: minmax(10px, auto);
-  }
 }
 
 .padding-block-100 {
@@ -363,6 +378,9 @@ svg {
 }
 .padding-block-900 {
   padding-block: var(--size-900);
+}
+.padding-block-950 {
+  padding-block: var(--size-950);
 }
 
 .padding-inline-100 {
@@ -402,7 +420,29 @@ svg {
 }
 
 :where(.flow > :not(:first-child)) {
-  margin-top: var(--flow-spacer, 2em);
+  margin-top: var(--flow-spacer, 2rem);
+}
+
+:where(.flow-500 > :not(:first-child)) {
+  margin-top: var(--flow-spacer, 2.5rem);
+}
+
+.gap-100 {
+  gap: 0.5em;
+}
+
+.gap-200 {
+  gap: 0.75em;
+}
+.gap-300 {
+  gap: 1em;
+}
+.gap-400 {
+  gap: 1.25em;
+}
+
+.tablet {
+  display: none;
 }
 
 /* ---------- REGULAR STYLING ---------- */
@@ -432,13 +472,50 @@ h3 {
   text-align: center;
 }
 
+.manage-grid {
+  display: grid;
+  grid-auto-columns: 2fr 3fr;
+  grid-template-areas:
+    "one"
+    "two"
+    "three"
+    "four";
+}
+
+.manage-grid :nth-child(1) {
+  grid-area: one;
+}
+.manage-grid :nth-child(2) {
+  grid-area: two;
+}
+.manage-grid :nth-child(3) {
+  grid-area: three;
+}
+.manage-grid :nth-child(4) {
+  grid-area: four;
+}
+
+.app-markets-div {
+  margin-top: 10vw;
+}
+
+/* TODO double-iphones ska egentligen sträcka sig till kanten */
+.double-iphones {
+  display: flex;
+  align-items: end;
+}
+
 .discover-more {
   display: flex;
   align-items: center;
   justify-content: center;
   border: none;
   background-color: transparent;
-  gap: 1em;
+  margin-inline: auto;
+  gap: 1rem;
+}
+
+#discover-more-p {
 }
 
 .manage-iphones {
@@ -449,12 +526,14 @@ h3 {
 
 #first-phone {
   position: relative;
+  filter: drop-shadow(-2em 0em 5em rgba(183, 177, 177, 0.5));
 }
 
 #second-phone {
   position: absolute;
   top: 135px;
   right: 233px;
+  filter: drop-shadow(-2em -5em 5em rgba(187, 180, 180, 0.5));
 }
 
 #discover-more-p {
@@ -470,66 +549,61 @@ h3 {
   align-items: center;
 }
 
+.first-section {
+  container-type: inline-size;
+  container-name: left;
+}
+
+.first-section-container {
+  display: grid;
+
+  grid-auto-columns: 1fr 1fr;
+  grid-template-areas:
+    "heading"
+    "general-content"
+    "discover"
+    "image";
+}
+
+.manage-heading {
+  grid-area: heading;
+  /*   background-color: green;
+ */
+}
+.manage-content {
+  grid-area: general-content;
+  /*   background-color: blue;
+ */
+}
+.discover-div {
+  grid-area: discover;
+  /*   background-color: red;
+ */
+  border: none;
+}
+.manage-double-iphones {
+  grid-area: image;
+  /*   background-color: yellow;
+ */
+}
+
 .button {
   cursor: pointer;
   text-decoration: none;
   border-radius: 0.4em;
   line-height: 1;
   padding-inline: 1.5em;
-  padding-block: 1em;
+  padding-block: 0.5em;
   border: 0.1em solid hsla(0, 0%, 0%, 0);
   background-color: var(--clr-accent-400);
   color: var(--clr-neutral-100);
 }
 
-.logo {
-  height: 3em;
-}
-
-.logoipsum-div {
-  display: grid;
-  grid-auto-flow: column;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: 1rem;
-}
-
-.logoipsum-div div {
-  border: solid 1px var(--clr-neutral-300);
-  border-radius: 0.5rem;
-  display: grid;
-  place-items: center;
-  height: 5rem;
-}
-
-.appMarketsLogosDiv {
-  background-color: var(--clr-neutral-900);
-  display: flex;
-  justify-content: center;
-  padding-block: 0.5em;
-  border-radius: 0.5em;
-}
-
-.app-features-ul > * {
-  display: grid;
-  grid-auto-flow: column;
-  grid-template-columns: 1fr 4fr;
-  gap: 1.5em;
-}
-
-.app-features-ul li div:nth-child(odd) {
-  background-color: var(--clr-neutral-200);
-  padding: 1rem;
-  border-radius: 0.5rem;
-  margin-bottom: auto;
-  display: grid;
-  place-items: center;
-}
-
-.app-features-ul li div p {
-  margin-top: 0.8rem;
-}
-
-.app-features-ul-div img {
+.subscribe {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  height: 3.3rem;
+  padding-block: 1em;
 }
 
 .button:hover,
@@ -545,6 +619,93 @@ h3 {
 
 .button:hover img {
   filter: sepia(1) saturate(500) hue-rotate(180deg) brightness(0.5);
+}
+
+.logo {
+  height: 3em;
+}
+
+.logoipsum-div {
+  display: grid;
+  /*   grid-auto-flow: column; */
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 1rem;
+  /*   grid-template-columns: minmax(0, 1fr);
+ */
+  grid-template-areas: "logo1 logo2 logo3 logo4 logo5 logo6";
+}
+
+.logoipsum-div :nth-child(1) {
+  grid-area: logo1;
+}
+.logoipsum-div :nth-child(2) {
+  grid-area: logo2;
+}
+.logoipsum-div :nth-child(3) {
+  grid-area: logo3;
+}
+.logoipsum-div :nth-child(4) {
+  grid-area: logo4;
+}
+.logoipsum-div :nth-child(5) {
+  grid-area: logo5;
+}
+.logoipsum-div :nth-child(6) {
+  grid-area: logo6;
+}
+
+.logoipsum-div div {
+  border: solid 1px var(--clr-neutral-300);
+  border-radius: 0.5rem;
+  display: grid;
+}
+
+.logoipsum-div div img {
+  max-width: 80%;
+  padding-block: 2rem;
+}
+
+.appMarketsLogosDiv {
+  background-color: var(--clr-neutral-900);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-block: 0.6em;
+  padding-inline: 1.4em;
+  border-radius: 0.5em;
+  border: none;
+  width: 100%;
+}
+
+.app-features-ul {
+  display: grid;
+  gap: 15%;
+}
+
+.app-features-ul div {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 1fr 4fr;
+  gap: 1.5em;
+}
+
+.app-features-ul div div:nth-child(odd) {
+  background-color: var(--clr-neutral-200);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: auto;
+  display: grid;
+  place-items: center;
+}
+
+.app-features-ul div div {
+}
+.app-features-ul div div p {
+  margin-top: 0.8rem;
+}
+
+.app-features-ul-div img {
 }
 
 .mobile-nav-toggle {
@@ -617,6 +778,7 @@ input:checked + .slider:before {
 }
 
 .desktop {
+  display: none;
 }
 
 .gradient {
@@ -629,12 +791,46 @@ input:checked + .slider:before {
 .how-does-mobile {
 }
 
+.money-transfer-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .iphone-centered {
   display: flex;
   justify-content: center;
 }
 
+.make-your-header {
+  max-width: 51%;
+}
+
 .faq {
+}
+
+.faq-grid {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "faq-header"
+    "faq-accordion"
+    "contact-icons"
+    "contact-us";
+}
+
+.faq-grid :nth-child(1) {
+  grid-area: faq-header;
+}
+.faq-grid :nth-child(2) {
+  grid-area: faq-accordion;
+}
+.faq-grid :nth-child(3) {
+  grid-area: contact-icons;
+}
+.faq-grid :nth-child(4) {
+  grid-area: contact-us;
 }
 
 .button-faq {
@@ -679,9 +875,20 @@ input:checked + .slider:before {
   box-shadow: 0em -0.2em 1em -0.3em var(--clr-accent-400);
 }
 
+.faq-arrow-down {
+  height: 3em;
+  border-radius: 100vmax;
+}
+
+.subscribe-container {
+  padding-bottom: 8vw;
+}
+
+.subscribe-heading {
+  max-width: 50%;
+}
+
 .contact-button {
-  display: grid;
-  place-items: center;
 }
 
 .bell {
@@ -698,14 +905,11 @@ input:checked + .slider:before {
   border-bottom-left-radius: 0.4em;
 }
 
-input::placeholder {
-  text-align: center;
-}
-
-.subscribe {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  height: 3.3rem;
+.label-placeholder {
+  position: absolute;
+  top: 29%;
+  left: max(2rem, 13%);
+  opacity: 50%;
 }
 
 .footer {
@@ -724,13 +928,14 @@ input::placeholder {
 }
 
 .half-opacity-p {
+  opacity: 50%;
 }
 
 .mobile {
 }
 
 .card {
-  background-color: hsla(0, 0%, 100%, 0.04);
+  background-color: var(--clr-neutral-100);
   padding-inline: var(--size-600);
   padding-bottom: var(--size-300);
   padding-top: var(--size-400);
@@ -740,7 +945,7 @@ input::placeholder {
 .card-faq {
   border: 1px solid var(--clr-accent-300);
   border-radius: var(--size-200);
-  gap: 1em;
+  width: 50%;
   padding: var(--size-600);
 }
 
@@ -760,54 +965,654 @@ input::placeholder {
   display: flex;
 }
 
-.narrower-when-wider-p {
+.narrower-when-wider {
 }
+/*MOBILE BELOW*/
 
-/*MOBILE ONLY BELOW*/
+@media screen and (481px > width) {
+  /*  .manage-grid {
+    grid-template-areas:
+      "one"
+      "two";
+  } */
 
-/* TODO Ändra till 70 em under. Lättare att utveckla när den är på 60*/
-@media screen and (max-width: 60em) {
-  .desktop {
-    display: none;
-  }
-
-  .mobile-nav-toggle {
-    display: block;
+  .how-section {
+    padding-block: 16%;
   }
 
   .faq {
     padding-block: var(--size-700);
   }
+
+  .faq-grid {
+    grid-template-areas:
+      "faq-header faq-header"
+      "faq-accordion faq-accordion"
+      "contact-us contact-us";
+  }
+
+  .mobile {
+    /* Must have display: block for the elements that has both mobile ant
+    /* tablets as classes */
+
+    display: block;
+  }
+
+  .discover-more-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+  }
+
+  .app-features-test {
+    padding-top: var(--size-700);
+  }
+
+  .app-features-test div div p {
+    padding-top: var(--size-500);
+    opacity: 100%;
+  }
+
+  .app-features-test div div ul {
+    display: grid;
+    gap: 30px;
+  }
+
+  .first-section-container {
+    grid-template-rows: 1fr 2fr 1fr;
+    grid-template-areas:
+      "heading"
+      "general-content"
+      "discover";
+  }
+
+  .manage-heading {
+    display: grid;
+    place-items: center;
+  }
+
+  .manage-content {
+    display: grid;
+    gap: 14%;
+  }
+  .manage-content p {
+    text-align: center;
+    padding-top: 4%;
+  }
+
+  .app-store {
+    display: flex;
+    flex-direction: column;
+    gap: 15%;
+  }
+
+  .app-store button {
+    display: flex;
+    justify-content: center;
+    background-color: var(--clr-neutral-900);
+    padding-block: 9px;
+    padding-inline: 17px;
+    border-radius: 7px;
+  }
+
+  .discover-div {
+    padding-block: 40px;
+    display: grid;
+    place-items: center;
+  }
+  .discover-div button {
+    background-color: transparent;
+  }
+
+  .manage-double-iphones {
+  }
+
+  .bell {
+    max-height: 80%;
+  }
+
+  .email-input {
+    width: 90%;
+  }
 }
 
-/*MOBILE AND TABLET BELOW*/
+/* MOBILE AND TABLET BELOW */
 
-@media screen and (max-width: 50em) {
+@media screen and (769px > width) {
   .how-does-mobile {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
+  .mobile-nav-toggle {
+    display: block;
+  }
 }
 
-@media screen and (width > 60em) {
+/* TABLET BELOW */
+
+@media screen and (769px > width > 481px) {
+  .width-70 {
+    max-width: 70%;
+  }
+
+  .manage-grid {
+    grid-template-areas:
+      "one one"
+      "two four"
+      "three four";
+  }
+
+  .narrower-when-wider {
+    max-width: 50%;
+    margin-inline: auto;
+  }
+
+  .logoipsum-div div {
+    display: grid;
+    place-items: center;
+  }
+
   .mobile {
     display: none;
   }
-  .faq-columns {
-    grid-template-columns: 2fr 3fr;
-    gap: 6em;
+
+  /* .tablet has to come after .mobile since some elements share both class
+  and this way .tablet overruns .mobile so that the elements sharing them
+  are shown. */
+
+  .tablet {
+    display: block;
   }
+
+  .manage-header {
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .manage-text-content {
+    margin-top: 10vw;
+  }
+
+  .manage-text-content > * {
+    margin-top: 5vw;
+  }
+
+  .logoipsum-div {
+    grid-template-areas: "logo1 logo2 logo3 logo4";
+  }
+
+  .logoipsum-div :nth-child(5) {
+    display: none;
+  }
+  .logoipsum-div :nth-child(6) {
+    display: none;
+  }
+
+  .section-app-features {
+    padding-bottom: var(--size-950);
+  }
+
+  .faq-grid {
+    grid-template-areas:
+      "faq-header"
+      "faq-accordion"
+      "contact-icons";
+  }
+
+  .faq-header {
+    max-width: 40%;
+    margin-inline: auto;
+  }
+  .faq-p {
+    max-width: 62%;
+    margin-inline: auto;
+  }
+
+  .flex-gap {
+  }
+
+  .first-section-container {
+    grid-template-rows: 1.5fr 2fr 1fr;
+    grid-template-columns: 2fr 3fr;
+    grid-template-areas:
+      "heading heading"
+      "general-content image"
+      "discover image";
+  }
+
+  .manage-heading {
+    display: flex;
+    align-items: center;
+    max-width: 70%;
+    margin-inline: auto;
+  }
+
+  .manage-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 13%;
+  }
+
+  .app-store {
+    display: flex;
+    align-items: center;
+    gap: 5%;
+  }
+
+  .app-store button {
+    background-color: var(--clr-neutral-900);
+    padding-block: 9px;
+    padding-inline: 17px;
+    border-radius: 7px;
+  }
+
+  .discover-div {
+  }
+  .discover-div button {
+    cursor: pointer;
+    background-color: transparent;
+  }
+
+  .manage-double-iphones {
+    height: 100%;
+  }
+
+  .app-features-test > div {
+    padding-bottom: 8%;
+  }
+
+  .app-features-test div div p {
+    padding-top: 3%;
+  }
+
+  /*Code below is only to reset settings above*/
+  .subscribe-container * {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+  .desktop {
+    display: none;
+  }
+
+  .tablet {
+    display: block;
+  }
+
+  /*Reset ends here*/
+
+  .subscribe-container {
+    padding-inline: 2%;
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+  }
+
+  .bell-and-header {
+    display: flex;
+  }
+
+  .bell {
+    height: fit-content;
+  }
+
+  .email-form {
+    display: flex;
+    margin-inline: auto;
+    align-items: center;
+  }
+
+  .email-form form {
+  }
+  .email-input {
+    width: 100%;
+  }
+
+  .subscribe {
+    padding-inline: 14px;
+  }
+
+  /* .subscribe-container div h2 {
+    max-width: fit-content;
+  } */
+
+  /* TODO fixa email-form för tablet view */
 }
 
 /* TABLET AND DESKTOP BELOW */
 
-@media screen and (width > 50em) {
-  .narrower-when-wider-p {
+@media screen and (width> 481px) {
+  .even-columns {
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(10px, auto);
+  }
+
+  .manage-div {
+    align-items: flex-start;
+  }
+
+  .width-60 {
+    max-width: 60%;
+  }
+
+  .app-markets-div {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .app-features-ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .faq-columns {
+    grid-template-columns: 2fr 3fr;
+    gap: 6em;
+  }
+
+  .faq {
+    gap: 2em;
+  }
+
+  .faq-question1 {
+    border: none;
+    border-radius: 0.7em;
+    box-shadow: 0em 0.1em 1em 0.1em var(--clr-neutral-200);
+    padding-block: 1rem;
+    padding-inline: 1rem;
+    cursor: pointer;
+    transition: 0.4s;
+  }
+
+  .faq-question,
+  .faq-question1 > p {
+    font-weight: var(--fw-bold);
+    color: var(--clr-neutral-900);
+  }
+
+  .faq > div:not(:nth-child(1)) {
+    border: none;
+    border-radius: 0.7em;
+    box-shadow: 0em 0.5em 1em 0.1em var(--clr-neutral-200);
+    padding-block: 1rem;
+    padding-inline: 1rem;
+  }
+
+  .faq > div:last-child {
+    border-bottom-left-radius: 0.4rem;
+    border-bottom-right-radius: 0.4rem;
+  }
+
+  .faq-arrow {
+    height: 3em;
+    background-color: var(--clr-accent-400);
+    border-radius: 100vmax;
+    box-shadow: 0em -0.2em 1em -0.3em var(--clr-accent-400);
+  }
+
+  #correct-question {
+    margin-bottom: 0;
+    border-bottom: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    box-shadow: 0em -0.2em 0.1em 0.1em var(--clr-neutral-200);
+  }
+
+  #correct-answer {
+    border-top: 0;
+    margin-top: 0;
+    padding-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  .app-features-test div div ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 55px;
+  }
+}
+
+/*SMALL DESKTOP SCREENS*/
+@media screen and (1213px > width > 950px) {
+  .section-app-features {
+    /*     min-height: 70rem;
+ */
+  }
+}
+@media screen and (950px > width > 768px) {
+  .section-app-features {
+    /*     min-height: 88rem;
+ */
+  }
+}
+
+/* DESKTOP BELOW */
+@media screen and (width>768px) {
+  .padding-block-600 {
+    padding-block: 2%;
+  }
+
+  .padding-block-700 {
+    padding-block: 5%;
+  }
+
+  .faq-grid {
+    grid-template-columns: 5fr 9fr;
+    grid-template-rows: 2fr 5fr;
+  }
+
+  .faq {
+    margin-left: 18%;
+    margin-top: 0;
+  }
+
+  .faq-card-div {
+    height: fit-content;
+  }
+
+  .card-faq {
+    padding-block: 5%;
+  }
+
+  :where(.flow-500 > :not(:first-child)) {
+    margin-top: var(--flow-spacer, 1rem);
+  }
+
+  /* Don't know why the code below works but I haven't found a better way to
+  get rid of the padding */
+  .faq-heading {
+    /*     height: 0;
+ */
+  }
+
+  .mobile {
+    display: none;
+  }
+
+  .width-70 {
+    max-width: 95%;
+  }
+  .width-60 {
+    max-width: 85%;
+  }
+
+  .desktop {
+    display: block;
+  }
+
+  .manage-grid {
+    grid-template-areas:
+      "one four"
+      "two four"
+      "three four";
+  }
+
+  .manage-header {
+    margin-top: 15%;
+  }
+
+  .manage-text-content {
+    margin-top: 0;
+    height: 24vw;
+    padding-bottom: 5%;
+    margin-bottom: 5rem;
+  }
+
+  .manage-p {
+    width: 60%;
+  }
+
+  .app-markets-div {
+    margin-top: 12%;
+    display: flex;
+    align-items: center;
+    width: 75%;
+    gap: 5.5%;
+  }
+
+  .appMarketsLogosDiv {
+    margin-top: 0;
+    padding-inline: 0em;
+    border-radius: 0.7rem;
+  }
+
+  .discover-more {
+  }
+
+  .logoipsum-div {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .section-app-features {
+    padding-bottom: var(--size-950);
+  }
+
+  .app-features-ul {
+  }
+
+  .narrower-when-wider {
     max-width: 50%;
     margin-inline: auto;
   }
+
+  .make-your-even-columns {
+  }
+
+  .make-your-header {
+    max-width: 55%;
+  }
+
+  .faq-grid {
+    grid-template-areas:
+      "faq-header faq-accordion"
+      "contact-icons faq-accordion";
+  }
+
+  .subscribe-container {
+    padding-bottom: 3%;
+    grid-template-columns: 4fr 3fr;
+  }
+
+  .bell-and-header {
+    justify-content: flex-start;
+    gap: 5%;
+  }
+
+  .subscribe-heading {
+    max-width: 70%;
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  .email-form {
+    display: flex;
+    align-items: center;
+  }
+
+  .email-input {
+  }
+
+  .app-features-test > div {
+    display: grid;
+    grid-template-columns: 5fr 6fr;
+  }
+
+  .app-features-test div div p {
+    padding-top: 2%;
+  }
+
+  .app-features-test div div ul li div p {
+    padding-top: 4%;
+  }
+
+  .first-section-container {
+    grid-template-rows: 2fr 2fr 5fr;
+    padding-top: 5%;
+    align-content: end;
+    grid-template-columns: 2fr 3fr;
+    grid-template-areas:
+      "heading image"
+      "general-content image"
+      "discover image";
+  }
+  .manage-double-iphones {
+    height: 100%;
+  }
+
+  .manage-heading {
+  }
+
+  .manage-content {
+    padding-top: 3%;
+    max-width: 80%;
+    display: flex;
+    gap: 40%;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .app-store {
+    display: flex;
+    align-items: center;
+    gap: 4%;
+  }
+
+  .app-store button {
+    background-color: var(--clr-neutral-900);
+    padding-block: 9px;
+    padding-inline: 17px;
+    border-radius: 9px;
+  }
+
+  .discover-div {
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 60px;
+  }
+  .discover-div button {
+    cursor: pointer;
+    background-color: transparent;
+  }
 }
+
+@container (768px < width < 1257px) {
+  .first-section-container {
+    grid-template-rows: 2fr 2fr 2fr;
+  }
+}
+@container (768px < width < 868px) {
+  .first-section-container {
+    grid-template-rows: 2fr 1fr 1fr;
+  }
+  .manage-heading {
+    padding-bottom: 10px;
+  }
+}
+
+/* DARK THEME BELOW */
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -853,12 +1658,40 @@ input::placeholder {
   .half-opacity-p {
     opacity: 50%;
   }
-  .app-features-ul li div p {
+  .app-features-ul div div p {
     opacity: 70%;
   }
   p {
     opacity: 50%;
   }
+}
+
+.app-features-test {
+  padding-bottom: var(--size-900);
+}
+
+.app-features-test div div p {
+  margin-top: 0px;
+}
+.app-features-test div div ul {
+  margin-top: 10%;
+}
+
+.app-features-test div div ul li {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 20px;
+}
+
+.app-features-test div div ul li div h3 {
+  font-weight: var(--fw-extra-bold);
+  font-size: var(--fs-300);
+}
+
+.app-features-test div div ul li img {
+  padding: 16px;
+  background-color: var(--clr-neutral-200);
+  border-radius: 0.4rem;
 }
 
 /*TODO Lägg in en container under som kopplar med .manage-iphones så att 

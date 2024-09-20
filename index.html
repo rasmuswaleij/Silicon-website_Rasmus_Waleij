@@ -36,12 +36,12 @@
                   class="only-shown-dark-theme"
                 />
               </a>
-              <a class="desktop text-primary-700 fs-quinary-heading"
+              <a class="desktop text-primary-700 fw-bold"
                 >Features</a
               >
             </div>
             <div class="flex-row-center">
-              <p class="desktop fs-body fw-regular ff-body">Dark Mode</p>
+              <p class="desktop tablet fw-regular text-neutral-900">Dark Mode</p>
               <label class="switch">
                 <input type="checkbox" />
                 <span class="slider round"></span>
@@ -75,283 +75,270 @@
       </div>
     </header>
     <main>
-      <section class="padding-block-900 gradient">
-        <div class="container gradient">
-          <div class="even-columns" style="gap: 7em">
-            <div class="flow flex-column-justify">
-              <h1 class="fs-primary-heading fw-extra-bold">
-                Manage All Your Money in One App
-              </h1>
-              <p class="fs-250 text-primary-700">
-                We offer you a new generation of the mobile banking. Save, spend
-                & manage money in your pocket.
-              </p>
-              <div class="flow flex-column-justify">
-                <div class="appMarketsLogosDiv" id="appMarketsLogosDiv">
-                  <img
-                    src="/assets/images/Group.svg"
-                    alt=""
-                    class="market-logo"
-                  />
-                </div>
-                <div
-                  class="appMarketsLogosDiv"
-                  id="appMarketsLogosDiv"
-                  style="--flow-spacer: 0.9em"
-                >
-                  <img
-                    src="/assets/images/googleplay-light.svg.svg"
-                    alt=""
-                    class="appMarketLogo"
-                  />
-                </div>
-                <button class="discover-more">
-                  <img
-                    src="/assets/images/arrow_down_grey.svg"
-                    alt=""
-                    class="arrow-down only-shown-light-theme"
-                  />
-                  <img
-                    src="/assets/images/arrow_down_dark.svg"
-                    alt=""
-                    class="arrow-down only-shown-dark-theme"
-                  />
-                  <p class="fs-100 text-primary-700" id="discover-more-p">
-                    Discover more
-                  </p>
-                </button>
-              </div>
-            </div>
-            <div class="desktop manage-iphones">
-              <div>
-                <img
-                  src="/assets/images/iPhone 12 Pro.svg"
-                  alt=""
-                  id="second-phone"
-                />
+      <section
+        class="padding-block-950 gradient"
+        style="padding-bottom: 0; display: none"
+      >
+        <div class="container manage-grid flow">
+          <h1 class="fs-primary-heading fw-extra-bold width-70 manage-header">
+            <!-- TODO Ändra så att texten börjar längst till vänter -->
+            Manage All Your Money in One App
+          </h1>
 
-                <img
-                  src="/assets/images/iPhone 12 Pro again.svg"
-                  alt=""
-                  id="first-phone"
-                />
-              </div>
+          <div class="manage-text-content" style="height: fit-content">
+            <p class="fs-250 text-primary-700 width-60">
+              We offer you a new generation of the mobile banking. Save, spend &
+              manage money in your pocket.
+            </p>
+            <div class="app-markets-div flow" style="--flow-spacer: 3.5em">
+              <button class="appMarketsLogosDiv">
+                <img src="/assets/images/Group.svg" alt="" />
+              </button>
+              <button class="appMarketsLogosDiv" style="--flow-spacer: 0.9em">
+                <img src="/assets/images/googleplay-light.svg.svg" alt="" />
+              </button>
             </div>
+          </div>
+          <div class="discover-more-div" style="width: 100%">
+            <button class="discover-more" style="margin-inline: 0">
+              <img
+                src="/assets/images/arrow_down_grey.svg"
+                alt=""
+                class="arrow-down only-shown-light-theme"
+              />
+              <img
+                src="/assets/images/arrow_down_dark.svg"
+                alt=""
+                class="arrow-down only-shown-dark-theme"
+              />
+              <p class="fs-100 text-primary-700" id="discover-more-p">
+                Discover more
+              </p>
+            </button>
+          </div>
+          <div class="tablet desktop double-iphones">
+            <img src="/assets/images/double-iphones.svg" alt="" />
           </div>
         </div>
       </section>
-      <section class="padding-block-900 desktop">
+      <section class="gradient first-section">
+        <div class="container first-section-container">
+          <h1 class="manage-heading fs-primary-heading fw-extra-bold">
+            Manage All Your Money in One App
+          </h1>
+          <div class="manage-content">
+            <p>
+              We offer you a new generation of the mobile banking. Save, spend &
+              manage money in your pocket.
+            </p>
+            <div class="app-store">
+              <button>
+                <img src="/assets/images/Group.svg" alt="" />
+              </button>
+              <button>
+                <img src="/assets/images/googleplay-light.svg.svg" alt="" />
+              </button>
+            </div>
+          </div>
+          <div class="discover-div">
+            <button style="display: flex; align-items: center; gap: 7px">
+              <img
+                src="/assets/images/arrow_down_grey.svg"
+                alt=""
+                class="arrow-down only-shown-light-theme"
+              />
+              <img
+                src="/assets/images/arrow_down_dark.svg"
+                alt=""
+                class="arrow-down only-shown-dark-theme"
+              />
+              <p>Discover more</p>
+            </button>
+          </div>
+          <img
+            src="/assets/images/double-iphones.svg"
+            alt=""
+            class="tablet desktop manage-double-iphones"
+          />
+        </div>
+      </section>
+      <section class="padding-block-900 tablet desktop">
         <div class="container logoipsum-div">
-          <div>
+          <div class="desktop tablet">
             <img src="/assets/images/logoipsum (6).svg" alt="" />
           </div>
-          <div>
+          <div class="desktop tablet">
             <img src="/assets/images/logoipsum (1).svg" alt="" />
           </div>
-          <div>
+          <div class="desktop tablet">
             <img src="/assets/images/logoipsum (2).svg" alt="" />
           </div>
-          <div>
+          <div class="desktop tablet">
             <img src="/assets/images/logoipsum (3).svg" alt="" />
           </div>
-          <div>
+
+          <!-- TODO få nedan 2 loggor att inte visas på tablet -->
+          <div class="desktop">
             <img src="/assets/images/logoipsum (4).svg" alt="" />
           </div>
-          <div>
+          <div class="desktop">
             <img src="/assets/images/logoipsum (5).svg" alt="" />
           </div>
         </div>
       </section>
-      <section class="padding-block-700">
+      
+      <section class="app-features-test" style="">
         <div class="container">
-          <div class="even-columns">
-            <div class="desktop">
-              <img src="/assets/images/iPhone 12 Pro (2).svg" alt="" />
-              <!--Får ser hur jag löser ovan att telefonen egentligen ska vara i 3D. Kanske bara köra 2D istället.-->
-              <img src="/assets/images/Change This (1).svg" alt="" />
-            </div>
-
-            <div class="flow">
-              <h2 class="fs-secondary-heading fw-extra-bold">App Features</h2>
-              <p class="fs-250 text-primary-700 half-opacity-p">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-                volutpat mollis egestas. Nam luctus facilisis ultrices.
-                Pellentesque volutpat ligula est. Mattis fermentum, at nec
-                lacus.
-              </p>
-              <div style="display: flex">
+          <img src="/assets/images/3d-iphone.svg" alt="" class="desktop" />
+          <div class="" style="">
+            <h2 class="fs-secondary-heading fw-extra-bold">App Features</h2>
+            <p class="half-opacity-p fs-250">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
+              volutpat mollis egestas. Nam luctus facilisis ultrices.
+              Pellentesque volutpat ligula est. Mattis fermentum, at nec lacus.
+            </p>
+            <ul>
+              <li>
+                <img src="/assets/images/credit-card.svg" alt="" />
                 <div>
-                  <ul class="app-features-ul flow" role="list">
-                    <li>
-                      <div class="app-features-ul-div">
-                        <img src="/assets/images/credit-card.svg" alt="" />
-                      </div>
-                      <div>
-                        <h3
-                          class="fs-quinary-heading fw-bold text-neutral-900"
-                          style="text-align: start"
-                        >
-                          Easy Payments
-                        </h3>
-                        <p>
-                          Id mollis consectetur congue egestas egestas
-                          suspendisse blandit justo.
-                        </p>
-                      </div>
-                    </li>
-                    <li>
-                      <div>
-                        <img src="/assets/images/bars-graphic.svg" alt="" />
-                      </div>
-                      <div>
-                        <h3
-                          class="fs-quinary-heading fw-bold text-neutral-900"
-                          style="text-align: start"
-                        >
-                          Cost Statistics
-                        </h3>
-                        <p>
-                          Mattis urna ultricies non amet, purus in auctor non.
-                          Odio vulputate ac nibh.
-                        </p>
-                      </div>
-                    </li>
-
-                    <li>
-                      <div>
-                        <img src="/assets/images/wallet.svg" alt="" />
-                      </div>
-
-                      <div>
-                        <h3
-                          class="fs-quinary-heading fw-bold text-neutral-900"
-                          style="text-align: start"
-                        >
-                          Regular Cashback
-                        </h3>
-                        <p>
-                          Sit facilisis dolor arcu, fermentum vestibulum arcu
-                          elementum imperdiet eleifend.
-                        </p>
-                      </div>
-                    </li>
-
-                    <li>
-                      <div>
-                        <img src="/assets/images/shield.svg" alt="" />
-                      </div>
-
-                      <div>
-                        <h3
-                          class="fs-quinary-heading fw-bold text-neutral-900"
-                          style="text-align: start"
-                        >
-                          Data Security
-                        </h3>
-                        <p>
-                          Augue pulvinar justo, fermentum fames aliquam accumsan
-                          vestibulum non.
-                        </p>
-                      </div>
-                    </li>
-                    <li>
-                      <div>
-                        <img src="/assets/images/communication.svg" alt="" />
-                      </div>
-
-                      <div>
-                        <h3
-                          class="fs-quinary-heading fw-bold text-neutral-900"
-                          style="text-align: start"
-                        >
-                          Support 24/7
-                        </h3>
-                        <p>
-                          A elementum, imperdiet enim, pretium etiam facilisi in
-                          aenean quam mauris.
-                        </p>
-                      </div>
-                    </li>
-                    <li>
-                      <div>
-                        <img src="/assets/images/vector.svg" alt="" />
-                      </div>
-
-                      <div>
-                        <h3
-                          class="fs-quinary-heading fw-bold text-neutral-900"
-                          style="text-align: start"
-                        >
-                          Top Standards
-                        </h3>
-                        <p>
-                          Faucibus cursus maecenas lorem cursus nibh. Sociis sit
-                          risus id. Sit facilisis dolor arcu.
-                        </p>
-                      </div>
-                    </li>
-                  </ul>
+                  <h3>Easy Payments</h3>
+                  <p>
+                    Id mollis consectetur congue egestas egestas suspendisse
+                    blandit justo.
+                  </p>
                 </div>
-              </div>
-            </div>
+              </li>
+              <li>
+                <img src="/assets/images/shield.svg" alt="" />
+                <div>
+                  <h3>Data Security</h3>
+                  <p>
+                    Augue pulvinar justo, fermentum fames aliquam accumsan
+                    vestibulum non.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <img src="/assets/images/bars-graphic.svg" alt="" />
+                <div>
+                  <h3>Cost Statistics</h3>
+                  <p>
+                    Mattis urna ultricies non amet, purus in auctor non. Odio
+                    vulputate ac nibh.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <img src="/assets/images/communication.svg" alt="" />
+                <div>
+                  <h3>Support 24/7</h3>
+                  <p>
+                    A elementum, imperdiet enim, pretium etiam facilisi in
+                    aenean quam mauris.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <img src="/assets/images/wallet.svg" alt="" />
+                <div>
+                  <h3>Regular Cashback</h3>
+                  <p>
+                    Sit facilisis dolor arcu, fermentum vestibulum arcu
+                    elementum imperdiet eleifend.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <img src="/assets/images/vector.svg" alt="" />
+                <div>
+                  <h3>Top Standards</h3>
+                  <p>
+                    Faucibus cursus maecenas lorem cursus nibh. Sociis sit risus
+                    id. Sit facilisis dolor arcu.
+                  </p>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
       </section>
-      <section class="padding-block-300 bg-neutral-150">
-        <div class="container padding-block-800 flow how-does-mobile">
+      <section class="padding-block-900 bg-neutral-150 how-section">
+        <div class="container flow how-does-mobile">
           <h1 class="fs-secondary-heading fw-extra-bold text-align">
             How Does It Work?
           </h1>
-          <div class="even-columns" style="position: relative">
+          <div class="" style="position: relative">
             <!-- TODO Kolla med en lärare hur man kan göra detta utan att behvöa
              lägga varje img i en egen div -->
-            <div class="iphone-centered">
-              <img
-                src="/assets/images/iPhone 12 Pro (5).svg"
-                alt=""
-                class="desktop"
-              />
-            </div>
-            <div class="iphone-centered">
-              <img
-                src="/assets/images/iPhone 12 Pro (2).svg"
-                alt=""
-                class="desktop"
-              />
-            </div>
-            <div class="iphone-centered">
-              <img
-                src="assets\images\iphone.svg"
-                alt=""
-                style="position: relative"
-                class="desktop"
-              />
-            </div>
-            <img
-              src="/assets/images/how.svg"
-              alt=""
-              style="position: relative; z-index: 1"
-              class="mobile"
-            />
-            <!--TODO Flytta style från ovan till css-dok-->
-
-            <img
-              src="/assets/images/Change This (4).svg"
-              alt=""
+            <!-- TODO byta ut bilderna nedan så att det stämmer med de som ska finnas för tablet -->
+            <div
               style="
-                position: absolute;
-                left: 15px;
-                top: 15px;
-                zoom: 84%;
-                border-radius: 2.3rem;
+                display: flex;
+                justify-content: center;
+                gap: 8%;
+                margin-top: 4%;
               "
-              class="mobile"
-            />
+            >
+              <div class="iphone-centered desktop">
+                <img
+                  src="/assets/images/iPhone 12 Pro (5).svg"
+                  alt=""
+                  class="desktop"
+                />
+              </div>
+              <div class="iphone-centered desktop">
+                <img
+                  src="/assets/images/iPhone 12 Pro (2).svg"
+                  alt=""
+                  class="desktop"
+                />
+              </div>
+              <div class="iphone-centered desktop">
+                <img
+                  src="assets\images\iphone.svg"
+                  alt=""
+                  style="position: relative"
+                  class="desktop"
+                />
+              </div>
+            </div>
+            <div>
+              <div class="iphone-centered">
+                <img src="/assets/images/container.svg" alt="" class="tablet" />
+                <img
+                  src="/assets/images/iphone-middle-tablet.svg"
+                  alt=""
+                  class="tablet"
+                  style="position: absolute; height: 93%; top: 27px"
+                />
+              </div>
+            </div>
+            <div>
+              <img
+                src="/assets/images/how.svg"
+                alt=""
+                style="position: relative; z-index: 1"
+                class="mobile"
+              />
+
+              <img
+                src="/assets/images/Change This (4).svg"
+                alt=""
+                style="
+                  position: absolute;
+                  left: 15px;
+                  top: 20px;
+                  zoom: 84%;
+                  border-radius: 2.3rem;
+                "
+                class="mobile"
+              />
+            </div>
           </div>
           <h3 class="fs-quaternary-heading fw-bold desktop text-align">
             Latest transaction history
           </h3>
-          <p class="desktop half-opacity-p text-align narrower-when-wider-p">
+          <p class="desktop half-opacity-p text-align narrower-when-wider">
             Enim, et amet praesent pharetra. Mi non ante hendrerit amet sed.
             Arcu sociis tristique quisque hac in consectetur condimentum.
           </p>
@@ -361,74 +348,134 @@
           >
             Transfers to people from your contact list
           </h3>
-          <p class="text-align mobile">
+          <h3
+            class="fs-quaternary-heading fw-extra-bold tablet"
+            style="width: 85%"
+          >
+            Step 3. Transfers to people from your contact list
+          </h3>
+          <p class="text-align tablet mobile width-60">
             Proin volutpat mollis egestas. Nam luctus facilisis ultrices.
             Pellentesque volutpat ligula est. Mattis fermentum, at nec lacus.
           </p>
         </div>
       </section>
       <section class="padding-block-900 desktop">
-        <div class="container">
-          <div class="even-columns">
-            <div class="flow money-transfer-div">
-              <h2 class="fs-tertiary-heading fw-extra-bold">
+        <div class="container flow">
+          <div class="even-columns make-your-even-columns">
+            <div class="flow money-transfer-div" style="--flow-spacer: 2%">
+              <h2 class="fs-tertiary-heading fw-extra-bold make-your-header">
                 Make your money transfer simple and clear
               </h2>
-              <div>
+              <div class="gap-100" style="margin-top: 6%">
                 <img src="/assets/images/bx-check-circle.svg" alt="" />
                 <p>Banking transactions are free for you</p>
               </div>
-              <div>
+              <div class="gap-100">
                 <img src="/assets/images/bx-check-circle.svg" alt="" />
                 <p>No monthly cash commission</p>
               </div>
-              <div>
+              <div class="gap-100">
                 <img src="/assets/images/bx-check-circle.svg" alt="" />
                 <p>Manage payments and transactions online</p>
               </div>
-              <button><p>Learn more</p></button>
+              <button
+                class="button"
+                style="
+                  margin-top: 7%;
+                  max-width: fit-content;
+                  display: flex;
+                  align-items: center;
+                  gap: 0.25rem;
+                "
+              >
+                <p>Learn more</p>
+                <img src="/assets/images/icon-r.svg" alt="" />
+              </button>
             </div>
             <div>
-              <img src="/assets/images/inner.svg" alt="" />
-              <img src="/assets/images/inner (1).svg" alt="" />
+              <img src="/assets/images/simple-screen.svg" alt="" />
             </div>
           </div>
-          <div class="even-columns">
+          <div class="even-columns" style="gap: 15%">
             <div>
-              <img src="/assets/images/inner (2).svg" alt="" />
-              <img src="/assets/images/Rectangle 1974.svg" alt="" />
+              <img src="/assets/images/recieve-screen.svg" alt="" />
             </div>
-            <div class="flow">
-              <h2 class="fs-tertiary-heading fw-extra-bold">
+            <div
+              class="flow"
+              style="
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+              "
+            >
+              <h2
+                class="fs-tertiary-heading fw-extra-bold"
+                style="max-width: 80%"
+              >
                 Receive payment from international bank details
               </h2>
               <div class="even-columns">
                 <div class="flow">
-                  <img src="/assets/images/credit-card.svg" alt="" />
+                  <img
+                    src="/assets/images/credit-card.svg"
+                    alt=""
+                    style="
+                      background-color: var(--clr-neutral-200);
+                      padding: 1rem;
+                      border-radius: 0.5rem;
+                      margin-bottom: auto;
+                      display: grid;
+                      place-items: center;
+                    "
+                  />
                   <p>
                     Manage your payments online. Mollis congue egestas egestas
                     fermentum fames.
                   </p>
                 </div>
                 <div class="flow">
-                  <img src="/assets/images/wallet.svg" alt="" />
+                  <img
+                    src="/assets/images/wallet.svg"
+                    alt=""
+                    style="
+                      background-color: var(--clr-neutral-200);
+                      padding: 1rem;
+                      border-radius: 0.5rem;
+                      margin-bottom: auto;
+                      display: grid;
+                      place-items: center;
+                    "
+                  />
                   <p>
                     A elementur and imperdiet enim, pretium etiam facilisi
                     aenean quam mauris.
                   </p>
                 </div>
               </div>
-              <button><p>Learn more</p></button>
+              <button
+                class="button"
+                style="
+                  margin-top: 7%;
+                  max-width: fit-content;
+                  display: flex;
+                  align-items: center;
+                  gap: 0.25rem;
+                "
+              >
+                <p>Learn more</p>
+                <img src="/assets/images/icon-r.svg" alt="" />
+              </button>
             </div>
           </div>
         </div>
       </section>
       <section class="padding-block-900 desktop bg-neutral-150">
         <div class="container">
-          <div class="even-columns" style="grid-template-columns: 2fr 3fr">
+          <div class="even-columns" style="grid-template-columns: 3fr 5fr">
             <h2
               class="fs-secondary-heading fw-extra-bold"
-              style="max-width: 60%"
+              style="max-width: 80%"
             >
               Clients are Loving Our App
             </h2>
@@ -439,7 +486,7 @@
                   alt=""
                   class="qotation-image"
                 />
-                <div class="flow" style="position: relative; top: -15px">
+                <div class="flow" style="position: relative; top: -18px">
                   <img src="/assets/images/rating.svg" alt="" />
                   <p>
                     Sit pretium aliquam tempor, orci dolor sed maecenas rutrum
@@ -485,38 +532,16 @@
       </section>
       <section class="padding-block-700">
         <div class="container">
-          <div class="even-columns faq-columns">
-            <div class="flow">
-              <h2
-                class="fs-tertiary-heading fw-extra-bold"
-                style="max-width: 70%"
-              >
-                Any questions? Check out the FAQs
+          <div class="faq-grid flow">
+            <div class="flow faq-heading">
+              <h2 class="fs-tertiary-heading fw-extra-bold faq-header">
+                Any questions? </br> Check out the FAQs
               </h2>
-              <p class="fs-250">
+              <p class="fs-250 faq-p">
                 Still have unanswered questions and need to get in touch?
               </p>
-              <div class="flex-gap">
-                <div class="desktop card-faq flow">
-                  <img src="/assets/images/icon (1).svg" alt="" />
-                  <p>Still have questions?</p>
-                  <button class="button-faq flex-gap">
-                    <p class="text-accent-400">Contact us</p>
-                    <img src="/assets/images/icon-r.svg" alt="" />
-                  </button>
-                  <!--Måste fixa pilen på alla knappar-->
-                </div>
-                <div class="desktop card-faq flow">
-                  <img src="/assets/images/icon (2).svg" alt="" />
-                  <p>Don't like phone calls?</p>
-                  <button class="button-faq flex-gap">
-                    <p class="text-system-400">Contact us</p>
-                    <img src="/assets/images/icon-r-green.svg" alt="" />
-                  </button>
-                  <!--Måste fixa pilen på alla knappar-->
-                </div>
-              </div>
             </div>
+
             <div class="faq">
               <!--Måste troligtvis lägga till en bild på en pil längst till höger på alla paragrafer-->
               <div class="faq-question1 flex-row-center">
@@ -524,10 +549,15 @@
                 <img
                   src="/assets/images/blue-arrow.svg"
                   alt=""
-                  class="faq-arrow"
+                  class="faq-arrow mobile"
+                />
+                <img
+                  src="/assets/images/arrow-grey-down.svg"
+                  alt=""
+                  class="faq-arrow-down tablet desktop"
                 />
               </div>
-              <div class="faqanswer">
+              <div class="faqanswer mobile">
                 <p>
                   Can I schedule future transfers?... Nunc duis id aenean
                   gravida tincidunt eu, tempor ullamcorper. Viverra aliquam
@@ -542,12 +572,26 @@
               <div class="faq-question flex-row-center">
                 <p>What formats can I download my transaction history in?</p>
                 <img
-                  src="/assets/images/blue-arrow.svg"
+                  src="/assets/images/arrow-grey-down.svg"
                   alt=""
-                  class="faq-arrow"
+                  class="faq-arrow-down"
                 />
               </div>
-              <div class="faqanswer">
+
+              <div class="faq-question flex-row-center" id="correct-question">
+                <p>Can I schedule future transfers?</p>
+                <img
+                  src="/assets/images/blue-arrow.svg"
+                  alt=""
+                  class="faq-arrow tablet desktop"
+                />
+                <img
+                  src="/assets/images/arrow-grey-down.svg"
+                  alt=""
+                  class="faq-arrow-down mobile"
+                />
+              </div>
+              <div class="faqanswer tablet desktop" id="correct-answer">
                 <p>
                   Can I schedule future transfers?... Nunc duis id aenean
                   gravida tincidunt eu, tempor ullamcorper. Viverra aliquam
@@ -562,112 +606,106 @@
               <div class="faq-question flex-row-center">
                 <p>When can I use Banking App services?</p>
                 <img
-                  src="/assets/images/blue-arrow.svg"
+                  src="/assets/images/arrow-grey-down.svg"
                   alt=""
-                  class="faq-arrow"
+                  class="faq-arrow-down"
                 />
               </div>
-              <div class="faqanswer">
-                <p>
-                  Can I schedule future transfers?... Nunc duis id aenean
-                  gravida tincidunt eu, tempor ullamcorper. Viverra aliquam
-                  arcu, viverra et, cursus. Aliquet pretium cursus adipiscing
-                  gravida et consequat lobortis arcu velit. Nibh pharetra
-                  fermentum duis accumsan lectus non. Massa cursus molestie
-                  lorem scelerisque pellentesque. Nisi, enim, arcu purus gravida
-                  adipiscing euismod montes, duis egestas. Vehicula eu etiam
-                  quam tristique tincidunt suspendisse ut consequat.
-                </p>
-              </div>
+
               <div class="faq-question flex-row-center">
                 <p>
                   Can I create my own password that is easy for me to remember?
                 </p>
                 <img
-                  src="/assets/images/blue-arrow.svg"
+                  src="/assets/images/arrow-grey-down.svg"
                   alt=""
-                  class="faq-arrow"
+                  class="faq-arrow-down"
                 />
               </div>
-              <div class="faqanswer">
-                <p>
-                  Can I schedule future transfers?... Nunc duis id aenean
-                  gravida tincidunt eu, tempor ullamcorper. Viverra aliquam
-                  arcu, viverra et, cursus. Aliquet pretium cursus adipiscing
-                  gravida et consequat lobortis arcu velit. Nibh pharetra
-                  fermentum duis accumsan lectus non. Massa cursus molestie
-                  lorem scelerisque pellentesque. Nisi, enim, arcu purus gravida
-                  adipiscing euismod montes, duis egestas. Vehicula eu etiam
-                  quam tristique tincidunt suspendisse ut consequat.
-                </p>
-              </div>
+
               <div class="faq-question flex-row-center">
                 <p>What happens if I forget or lose my password?</p>
                 <img
-                  src="/assets/images/blue-arrow.svg"
+                  src="/assets/images/arrow-grey-down.svg"
                   alt=""
-                  class="faq-arrow"
+                  class="faq-arrow-down"
                 />
               </div>
-              <div class="faqanswer">
-                <p>
-                  Can I schedule future transfers?... Nunc duis id aenean
-                  gravida tincidunt eu, tempor ullamcorper. Viverra aliquam
-                  arcu, viverra et, cursus. Aliquet pretium cursus adipiscing
-                  gravida et consequat lobortis arcu velit. Nibh pharetra
-                  fermentum duis accumsan lectus non. Massa cursus molestie
-                  lorem scelerisque pellentesque. Nisi, enim, arcu purus gravida
-                  adipiscin g euismod montes, duis egestas. Vehicula eu etiam
-                  quam tristique tincidunt suspendisse ut consequat.
-                </p>
+            </div>
+
+            <div class="flex-gap faq-card-div">
+              <div class="desktop tablet card-faq flow-500" style="">
+                <img src="/assets/images/icon (1).svg" alt="" />
+                <p>Still have questions?</p>
+                <button class="button-faq flex-row-center">
+                  <p class="text-accent-400">Contact us</p>
+                  <img src="/assets/images/icon-r.svg" alt="" />
+                </button>
+                <!--Måste fixa pilen på alla knappar-->
               </div>
+              <div class="desktop tablet card-faq flow-500">
+                <img src="/assets/images/icon (2).svg" alt="" />
+                <p>Don't like phone calls?</p>
+                <button class="button-faq flex-row-center">
+                  <p class="text-system-400">Contact us</p>
+                  <img src="/assets/images/icon-r-green.svg" alt="" />
+                </button>
+                <!--Måste fixa pilen på alla knappar-->
+              </div>
+            </div>
+            <div class="contact-button mobile" style="margin-inline: auto">
+              <button class="button" style="padding-block: 4vw">
+                <p class="text-neutral-100 fs-100">Contact us now</p>
+              </button>
             </div>
           </div>
         </div>
       </section>
-      <section class="mobile">
-        <div class="container contact-button">
-          <button class="button">
-            <p class="text-neutral-100 fs-100">Contact us now</p>
-          </button>
-        </div>
-      </section>
-      <section class="padding-block-700 bg-neutral-150">
+      <section class="">
         <div
-          class="container padding-block-700 padding-inline-400 flow even-columns"
-          style="gap: 4em"
+          class="padding-block-800 container padding-inline-900 even-columns bg-neutral-150 subscribe-container"
         >
-          <div class="flex-row-center">
-            <div class="bell-div">
-              <img src="/assets/images/bell.svg" alt="" class="bell" />
-            </div>
-            <h2 class="desktop fs-quaternary-heading fw-extra-bold">
+          <div class="flex-row-center bell-and-header">
+            <img src="/assets/images/bell.svg" alt="" class="bell" />
+            <h2
+              class="desktop fs-quaternary-heading fw-extra-bold subscribe-heading"
+            >
               Subscribe to our newsletter to stay informed about latest updates
             </h2>
             <h2
-              class="fs-quinary-heading fw-extra-bold mobile"
+              class="fs-quinary-heading fw-extra-bold tablet mobile"
               style="text-align: start"
             >
               Subscribe to our newsletter
             </h2>
           </div>
-          <form style="display: flex; justify-content: space-between">
-            <input
-              type="email"
-              title="Your Email"
-              placeholder="Your email"
-              class="email-input"
-              style="width: 100%"
-            />
-            <!--Lägg till en brevikon på input ovan-->
-            <button class="button subscribe">Subscribe</button>
-          </form>
+          <div class="email-form">
+            <form
+              style="
+                display: flex;
+                justify-content: space-between;
+                position: relative;
+              "
+            >
+              <label for="" class="fw-regular fs-100 label-placeholder" style=""
+                >Your Email</label
+              >
+              <input
+                type="email"
+                title="Your Email"
+                class="email-input"
+                style=""
+              />
+              <!--Lägg till en brevikon på input ovan-->
+              <button class="button subscribe">Subscribe</button>
+            </form>
+          </div>
         </div>
       </section>
     </main>
     <footer
-      class="footer flex-column-justify padding-block-500"
-      style="margin-top: 2em"
+      class="footer flex-column-justify padding-block-600"
+      style="margin-block: auto"
     >
       <p class="text-align fs-100 text-neutral-600 footer-p">
         © 2024 Silicon. All rights reserved. Credit MadrasThemes
