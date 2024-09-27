@@ -1,26 +1,17 @@
+@charset "UTF-8";
 /* TODO extrakurs: Kolla hur det blir när man printar sidan */
 /* TODO ta bort onödig kod */
 /* TODO ta bort alla kommentarer som inte behövs */
 /* TODO flytta inline style från HTML till CSS */
 /* TODO Lägga till en container query som gör att första section blir en column tidigare för annars täcker telefonerna texten */
-
 /* TODO kolla genom hela hemsidan på minsta breddenf ör desktop */
-
 /* --------- ROOT -------- */
-
 :root {
-  * {
-    border: solid 0px black;
-  }
-
   /**COLORS SET FOR LIGHT MODE -> LATER CHANGED FOR DARK IN MEDIA*/
   --clr-system-400: hsl(142, 71%, 45%);
-
   --clr-accent-300: hsl(265, 85%, 95%);
   --clr-accent-400: hsl(239, 84%, 67%);
-
   --clr-primary-700: hsl(234, 14%, 39%);
-
   --clr-neutral-050: hsl(270, 100%, 100%);
   --clr-neutral-100: hsl(0, 0%, 100%);
   --clr-neutral-150: hsl(225, 100%, 97%);
@@ -31,23 +22,17 @@
   --clr-neutral-600: hsl(231, 14%, 63%);
   --clr-neutral-800: hsl(235, 20%, 25%);
   --clr-neutral-900: hsl(223, 39%, 7%);
-
   --clr-dark-neutral-600: hsl(222, 24%, 11%);
   --clr-dark-neutral-700: hsl(226, 24%, 11%);
   --clr-dark-neutral-800: hsl(250, 33%, 11%);
-
   --clr-static-100: hsl(0, 0%, 100%);
-
   --ff-primary: "Manrope", sans-serif;
-
   --ff-body: var(--ff-primary);
   --ff-heading: var(--ff-primary);
-
   --fw-regular: 400;
   --fw-semi-bold: 600;
   --fw-bold: 700;
   --fw-extra-bold: 800;
-
   --fs-100: 0.88rem;
   --fs-200: 1rem;
   --fs-250: 1.125rem;
@@ -64,19 +49,14 @@
   --fs-800: 2.5rem;
   --fs-850: 2.77rem;
   --fs-900: 3.5rem;
-
   --fs-body: var(--fs-200);
-
   min-height: 63vh;
-
   --fs-primary-heading: var(--fs-750);
   --fs-secondary-heading: var(--fs-600);
   --fs-tertiary-heading: var(--fs-550);
   --fs-quaternary-heading: var(--fs-400);
   --fs-quinary-heading: var(--fs-300);
-
   --fs-button: var(--fs-100);
-
   --size-100: min(0.25rem);
   --size-200: min(0.5rem);
   --size-300: min(0.75rem);
@@ -89,6 +69,9 @@
   --size-900: min(7vw, 6.5rem);
   --size-950: min(8vw, 8rem);
 }
+:root * {
+  border: solid 0px black;
+}
 
 @media (769px > width > 481px) {
   :root {
@@ -96,7 +79,6 @@
     --fs-secondary-heading: var(--fs-700);
   }
 }
-
 @media (width > 768px) {
   :root {
     --fs-primary-heading: var(--fs-900);
@@ -105,9 +87,7 @@
     --fs-quaternary-heading: var(--fs-500);
   }
 }
-
 /** --------- RESET --------- */
-
 /* Box sizing rules */
 *,
 *::before,
@@ -123,8 +103,8 @@
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role="list"],
-ol[role="list"] {
+ul[role=list],
+ol[role=list] {
   list-style: none;
 }
 
@@ -146,7 +126,8 @@ body {
 
 /* A elements that don't have a class get default styles */
 a:not([class]) {
-  text-decoration-skip-ink: auto;
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
 }
 
 /* Make images easier to work with */
@@ -162,7 +143,6 @@ svg {
   html:focus-within {
     scroll-behavior: auto;
   }
-
   *,
   *::before,
   *::after {
@@ -172,9 +152,7 @@ svg {
     scroll-behavior: auto !important;
   }
 }
-
 /* -------- UTILITY CLASSES -------- */
-
 .screen-reader-only {
   position: absolute;
   width: 1px;
@@ -190,12 +168,15 @@ svg {
 .text-primary-700 {
   color: var(--clr-primary-700);
 }
+
 .text-accent-400 {
   color: var(--clr-accent-400);
 }
+
 .text-system-400 {
   color: var(--clr-system-400);
 }
+
 .text-accent-300 {
   color: var(--clr-accent-300);
 }
@@ -203,12 +184,15 @@ svg {
 .text-neutral-100 {
   color: var(--clr-neutral-100);
 }
+
 .text-neutral-300 {
   color: var(--clr-neutral-300);
 }
+
 .text-neutral-600 {
   color: var(--clr-neutral-600);
 }
+
 .text-neutral-900 {
   color: var(--clr-neutral-900);
 }
@@ -228,27 +212,35 @@ svg {
 .bg-neutral-100 {
   background-color: var(--clr-neutral-100);
 }
+
 .bg-neutral-150 {
   background-color: var(--clr-neutral-150);
 }
+
 .bg-neutral-200 {
   background-color: var(--clr-neutral-200);
 }
+
 .bg-neutral-300 {
   background-color: var(--clr-neutral-300);
 }
+
 .bg-neutral-400 {
   background-color: var(--clr-neutral-400);
 }
+
 .bg-neutral-500 {
   background-color: var(--clr-neutral-500);
 }
+
 .bg-neutral-600 {
   background-color: var(--clr-neutral-600);
 }
+
 .bg-neutral-800 {
   background-color: var(--clr-neutral-800);
 }
+
 .bg-neutral-900 {
   background-color: var(--clr-neutral-900);
 }
@@ -256,12 +248,15 @@ svg {
 .fw-bold {
   font-weight: var(--fw-bold);
 }
+
 .fw-semi-bold {
   font-weight: var(--fw-semi-bold);
 }
+
 .fw-extra-bold {
   font-weight: var(--fw-extra-bold);
 }
+
 .fw-regular {
   font-weight: var(--fw-regular);
 }
@@ -275,7 +270,6 @@ svg {
     text-align: center;
   }
 }
-
 .fs-primary-heading {
   font-size: var(--fs-primary-heading);
   line-height: 1.2;
@@ -301,18 +295,20 @@ svg {
     text-align: center;
   }
 }
-
 .fs-secondary-heading {
   font-size: var(--fs-secondary-heading);
   line-height: 1.2;
 }
+
 .fs-tertiary-heading {
   font-size: var(--fs-tertiary-heading);
   line-height: 1.2;
 }
+
 .fs-quaternary-heading {
   font-size: var(--fs-quaternary-heading);
 }
+
 .fs-quinary-heading {
   font-size: var(--fs-quinary-heading);
 }
@@ -324,6 +320,7 @@ svg {
 .fs-100 {
   font-size: var(--fs-100);
 }
+
 .fs-250 {
   font-size: var(--fs-250);
 }
@@ -337,8 +334,7 @@ svg {
 .container {
   --max-width: 1296px;
   --horizontal-padding: 1rem;
-
-  width: min(var(--max-width), 100% - (var(--horizontal-padding) * 2));
+  width: min(var(--max-width), 100% - var(--horizontal-padding) * 2);
   margin-inline: auto;
 }
 
@@ -355,30 +351,39 @@ svg {
 .padding-block-100 {
   padding-block: var(--size-100);
 }
+
 .padding-block-200 {
   padding-block: var(--size-200);
 }
+
 .padding-block-300 {
   padding-block: var(--size-300);
 }
+
 .padding-block-400 {
   padding-block: var(--size-400);
 }
+
 .padding-block-500 {
   padding-block: var(--size-500);
 }
+
 .padding-block-600 {
   padding-block: var(--size-600);
 }
+
 .padding-block-700 {
   padding-block: var(--size-700);
 }
+
 .padding-block-800 {
   padding-block: var(--size-800);
 }
+
 .padding-block-900 {
   padding-block: var(--size-900);
 }
+
 .padding-block-950 {
   padding-block: var(--size-950);
 }
@@ -386,27 +391,35 @@ svg {
 .padding-inline-100 {
   padding-inline: var(--size-100);
 }
+
 .padding-inline-200 {
   padding-inline: var(--size-200);
 }
+
 .padding-inline-300 {
   padding-inline: var(--size-300);
 }
+
 .padding-inline-400 {
   padding-inline: var(--size-400);
 }
+
 .padding-inline-500 {
   padding-inline: var(--size-500);
 }
+
 .padding-inline-600 {
   padding-inline: var(--size-600);
 }
+
 .padding-inline-700 {
   padding-inline: var(--size-700);
 }
+
 .padding-inline-800 {
   padding-inline: var(--size-800);
 }
+
 .padding-inline-900 {
   padding-inline: var(--size-900);
 }
@@ -434,9 +447,11 @@ svg {
 .gap-200 {
   gap: 0.75em;
 }
+
 .gap-300 {
   gap: 1em;
 }
+
 .gap-400 {
   gap: 1.25em;
 }
@@ -446,7 +461,6 @@ svg {
 }
 
 /* ---------- REGULAR STYLING ---------- */
-
 ::where(*) {
   padding: 0;
   margin: 0;
@@ -475,22 +489,21 @@ h3 {
 .manage-grid {
   display: grid;
   grid-auto-columns: 2fr 3fr;
-  grid-template-areas:
-    "one"
-    "two"
-    "three"
-    "four";
+  grid-template-areas: "one" "two" "three" "four";
 }
 
 .manage-grid :nth-child(1) {
   grid-area: one;
 }
+
 .manage-grid :nth-child(2) {
   grid-area: two;
 }
+
 .manage-grid :nth-child(3) {
   grid-area: three;
 }
+
 .manage-grid :nth-child(4) {
   grid-area: four;
 }
@@ -515,9 +528,6 @@ h3 {
   gap: 1rem;
 }
 
-#discover-more-p {
-}
-
 .manage-iphones {
   display: flex;
   justify-content: flex-end;
@@ -534,9 +544,6 @@ h3 {
   top: 135px;
   right: 233px;
   filter: drop-shadow(-2em -5em 5em rgba(187, 180, 180, 0.5));
-}
-
-#discover-more-p {
 }
 
 .arrow-down {
@@ -556,35 +563,33 @@ h3 {
 
 .first-section-container {
   display: grid;
-
   grid-auto-columns: 1fr 1fr;
-  grid-template-areas:
-    "heading"
-    "general-content"
-    "discover"
-    "image";
+  grid-template-areas: "heading" "general-content" "discover" "image";
 }
 
 .manage-heading {
   grid-area: heading;
   /*   background-color: green;
- */
+   */
 }
+
 .manage-content {
   grid-area: general-content;
   /*   background-color: blue;
- */
+   */
 }
+
 .discover-div {
   grid-area: discover;
   /*   background-color: red;
- */
+   */
   border: none;
 }
+
 .manage-double-iphones {
   grid-area: image;
   /*   background-color: yellow;
- */
+   */
 }
 
 .button {
@@ -629,28 +634,32 @@ h3 {
   display: grid;
   /*   grid-auto-flow: column; */
   grid-template-columns: repeat(4, minmax(0, 1fr));
-
   gap: 1rem;
   /*   grid-template-columns: minmax(0, 1fr);
- */
+   */
   grid-template-areas: "logo1 logo2 logo3 logo4 logo5 logo6";
 }
 
 .logoipsum-div :nth-child(1) {
   grid-area: logo1;
 }
+
 .logoipsum-div :nth-child(2) {
   grid-area: logo2;
 }
+
 .logoipsum-div :nth-child(3) {
   grid-area: logo3;
 }
+
 .logoipsum-div :nth-child(4) {
   grid-area: logo4;
 }
+
 .logoipsum-div :nth-child(5) {
   grid-area: logo5;
 }
+
 .logoipsum-div :nth-child(6) {
   grid-area: logo6;
 }
@@ -699,13 +708,8 @@ h3 {
   place-items: center;
 }
 
-.app-features-ul div div {
-}
 .app-features-ul div div p {
   margin-top: 0.8rem;
-}
-
-.app-features-ul-div img {
 }
 
 .mobile-nav-toggle {
@@ -737,7 +741,6 @@ h3 {
   right: 0;
   bottom: 0;
   background-color: var(--clr-neutral-600);
-  -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
@@ -749,7 +752,6 @@ h3 {
   left: 0.2em;
   bottom: 0.2em;
   background-color: white;
-  -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
@@ -762,8 +764,6 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(1.4em);
-  -ms-transform: translateX(1.4em);
   transform: translateX(1.4em);
 }
 
@@ -782,13 +782,7 @@ input:checked + .slider:before {
 }
 
 .gradient {
-  background-image: linear-gradient(
-    var(--clr-neutral-100),
-    var(--clr-accent-300)
-  );
-}
-
-.how-does-mobile {
+  background-image: linear-gradient(var(--clr-neutral-100), var(--clr-accent-300));
 }
 
 .money-transfer-div {
@@ -806,29 +800,25 @@ input:checked + .slider:before {
   max-width: 51%;
 }
 
-.faq {
-}
-
 .faq-grid {
   display: grid;
   width: 100%;
   grid-template-columns: 1fr;
-  grid-template-areas:
-    "faq-header"
-    "faq-accordion"
-    "contact-icons"
-    "contact-us";
+  grid-template-areas: "faq-header" "faq-accordion" "contact-icons" "contact-us";
 }
 
 .faq-grid :nth-child(1) {
   grid-area: faq-header;
 }
+
 .faq-grid :nth-child(2) {
   grid-area: faq-accordion;
 }
+
 .faq-grid :nth-child(3) {
   grid-area: contact-icons;
 }
+
 .faq-grid :nth-child(4) {
   grid-area: contact-us;
 }
@@ -888,9 +878,6 @@ input:checked + .slider:before {
   max-width: 50%;
 }
 
-.contact-button {
-}
-
 .light-mobile {
   display: none;
 }
@@ -924,14 +911,8 @@ input:checked + .slider:before {
   max-width: 60%;
 }
 
-.only-shown-light-theme {
-}
-
 .half-opacity-p {
   opacity: 50%;
-}
-
-.mobile {
 }
 
 .card {
@@ -965,20 +946,15 @@ input:checked + .slider:before {
   display: flex;
 }
 
-.narrower-when-wider {
-}
 .only-shown-dark-theme {
   display: none;
 }
 
 /* DARK THEME BELOW */
-
 @media (prefers-color-scheme: dark) {
   :root {
     --clr-accent-300: hsl(240, 32%, 13%);
-
     --clr-primary-700: hsl(0, 0%, 100%);
-
     --clr-neutral-000: hsl(0, 0%, 100%);
     --clr-neutral-050: hsl(203, 21%, 13%);
     --clr-neutral-100: hsl(223, 39%, 7%);
@@ -991,28 +967,23 @@ input:checked + .slider:before {
     --clr-neutral-800: hsl(225, 100%, 97%);
     --clr-neutral-900: hsl(0, 0%, 100%);
   }
-
   .only-shown-dark-theme {
     display: block;
   }
-
   .only-shown-light-theme {
     display: none;
   }
-
   .switch {
     position: relative;
     display: inline-block;
     width: 2.9em;
     height: 1.5em;
   }
-
   .switch input {
     opacity: 0;
     width: 0;
     height: 0;
   }
-
   .slider {
     position: absolute;
     cursor: pointer;
@@ -1021,10 +992,8 @@ input:checked + .slider:before {
     right: 0;
     bottom: 0;
     background-color: var(--clr-accent-400);
-    -webkit-transition: 0.4s;
     transition: 0.4s;
   }
-
   .slider:before {
     position: absolute;
     content: "";
@@ -1033,42 +1002,31 @@ input:checked + .slider:before {
     left: 1.6em;
     bottom: 0.2em;
     background-color: white;
-    -webkit-transition: 0.4s;
     transition: 0.4s;
   }
-
   input:checked + .slider {
     background-color: var(--clr-neutral-600);
   }
-
   input:focus + .slider {
     box-shadow: 0 0 1px var(--clr-neutral-600);
   }
-
   input:checked + .slider:before {
-    -webkit-transform: translateX(-1.4em);
-    -ms-transform: translateX(-1.4em);
     transform: translateX(-1.4em);
   }
-
   /* Rounded sliders */
   .round {
     border-radius: 100px;
     box-shadow: 0em 0.2em 0.5em -0.1em var(--clr-neutral-600);
   }
-
   .round:before {
     border-radius: 50px;
   }
-
   .round {
     box-shadow: none;
   }
-
   #appMarketsLogosDiv {
     background-color: var(--clr-neutral-800);
   }
-
   .arrow-down {
     filter: invert(1) contrast(0.8) hue;
   }
@@ -1100,79 +1058,56 @@ input:checked + .slider:before {
   .card {
     background-color: hsl(267, 12%, 15%);
   }
-
   .app-store button {
     padding: 0;
   }
-  .app-store {
-  }
 }
-
 /*MOBILE BELOW*/
-
 @media screen and (481px > width) {
   /*  .manage-grid {
-    grid-template-areas:
-      "one"
-      "two";
-  } */
-
+      grid-template-areas:
+        "one"
+        "two";
+    } */
   .how-section {
     padding-block: 16%;
   }
-
   .faq {
     padding-block: var(--size-700);
   }
-
   .faq-grid {
-    grid-template-areas:
-      "faq-header faq-header"
-      "faq-accordion faq-accordion"
-      "contact-us contact-us";
+    grid-template-areas: "faq-header faq-header" "faq-accordion faq-accordion" "contact-us contact-us";
   }
-
   .mobile {
     /* Must have display: block for the elements that has both mobile ant
-    /* tablets as classes */
-
+      /* tablets as classes */
     display: block;
   }
-
   .discover-more-div {
     display: flex;
     justify-content: center;
     align-items: center;
     padding-bottom: 20px;
   }
-
   .app-features-test {
     padding-top: var(--size-700);
   }
-
   .app-features-test div div p {
     padding-top: var(--size-500);
     opacity: 100%;
   }
-
   .app-features-test div div ul {
     display: grid;
     gap: 30px;
   }
-
   .first-section-container {
     grid-template-rows: 1fr 2fr 1fr;
-    grid-template-areas:
-      "heading"
-      "general-content"
-      "discover";
+    grid-template-areas: "heading" "general-content" "discover";
   }
-
   .manage-heading {
     display: grid;
     place-items: center;
   }
-
   .manage-content {
     display: grid;
     gap: 14%;
@@ -1181,13 +1116,11 @@ input:checked + .slider:before {
     text-align: center;
     padding-top: 4%;
   }
-
   .app-store {
     display: flex;
     flex-direction: column;
     gap: 15%;
   }
-
   .app-store button {
     display: flex;
     justify-content: center;
@@ -1196,7 +1129,6 @@ input:checked + .slider:before {
     padding-inline: 17px;
     border-radius: 7px;
   }
-
   .discover-div {
     padding-block: 40px;
     display: grid;
@@ -1205,21 +1137,14 @@ input:checked + .slider:before {
   .discover-div button {
     background-color: transparent;
   }
-
-  .manage-double-iphones {
-  }
-
   .bell {
     max-height: 80%;
   }
-
   .email-input {
     width: 90%;
   }
 }
-
 /* MOBILE AND TABLET BELOW */
-
 @media screen and (769px > width) {
   .how-does-mobile {
     display: flex;
@@ -1230,78 +1155,56 @@ input:checked + .slider:before {
     display: block;
   }
 }
-
 /* TABLET BELOW */
-
 @media screen and (769px > width > 481px) {
   .width-70 {
     max-width: 70%;
   }
-
   .manage-grid {
-    grid-template-areas:
-      "one one"
-      "two four"
-      "three four";
+    grid-template-areas: "one one" "two four" "three four";
   }
-
   .narrower-when-wider {
     max-width: 50%;
     margin-inline: auto;
   }
-
   .logoipsum-div div {
     display: grid;
     place-items: center;
   }
-
   .mobile {
     display: none;
   }
-
   /* .tablet has to come after .mobile since some elements share both class
-  and this way .tablet overruns .mobile so that the elements sharing them
-  are shown. */
-
+    and this way .tablet overruns .mobile so that the elements sharing them
+    are shown. */
   .tablet {
     display: block;
   }
-
   .manage-header {
     margin-inline: auto;
     text-align: center;
   }
-
   .manage-text-content {
     margin-top: 10vw;
   }
-
   .manage-text-content > * {
     margin-top: 5vw;
   }
-
   .logoipsum-div {
     grid-template-areas: "logo1 logo2 logo3 logo4";
   }
-
   .logoipsum-div :nth-child(5) {
     display: none;
   }
   .logoipsum-div :nth-child(6) {
     display: none;
   }
-
   .section-app-features {
     padding-bottom: var(--size-950);
   }
-
   .faq-grid {
-    grid-template-areas:
-      "faq-header"
-      "faq-accordion"
-      "contact-icons";
+    grid-template-areas: "faq-header" "faq-accordion" "contact-icons";
   }
-
   .faq-header {
     max-width: 40%;
     margin-inline: auto;
@@ -1310,65 +1213,47 @@ input:checked + .slider:before {
     max-width: 62%;
     margin-inline: auto;
   }
-
-  .flex-gap {
-  }
-
   .first-section-container {
     grid-template-rows: 1.5fr 2fr 1fr;
     grid-template-columns: 2fr 3fr;
-    grid-template-areas:
-      "heading heading"
-      "general-content image"
-      "discover image";
+    grid-template-areas: "heading heading" "general-content image" "discover image";
   }
-
   .manage-heading {
     display: flex;
     align-items: center;
     max-width: 70%;
     margin-inline: auto;
   }
-
   .manage-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 13%;
   }
-
   .app-store {
     display: flex;
     align-items: center;
     gap: 5%;
   }
-
   .app-store button {
     background-color: var(--clr-neutral-900);
     padding-block: 9px;
     padding-inline: 17px;
     border-radius: 7px;
   }
-
-  .discover-div {
-  }
   .discover-div button {
     cursor: pointer;
     background-color: transparent;
   }
-
   .manage-double-iphones {
     height: 100%;
   }
-
   .app-features-test > div {
     padding-bottom: 8%;
   }
-
   .app-features-test div div p {
     padding-top: 3%;
   }
-
   /*Code below is only to reset settings above*/
   .subscribe-container * {
     display: block;
@@ -1378,85 +1263,65 @@ input:checked + .slider:before {
   .desktop {
     display: none;
   }
-
   .tablet {
     display: block;
   }
-
   /*Reset ends here*/
-
   .subscribe-container {
     padding-inline: 2%;
     display: grid;
     grid-template-columns: 2fr 2fr;
   }
-
   .bell-and-header {
     display: flex;
   }
-
   .bell {
+    height: -moz-fit-content;
     height: fit-content;
   }
-
   .email-form {
     display: flex;
     margin-inline: auto;
     align-items: center;
   }
-
-  .email-form form {
-  }
   .email-input {
     width: 100%;
   }
-
   .subscribe {
     padding-inline: 14px;
   }
-
   /* .subscribe-container div h2 {
-    max-width: fit-content;
-  } */
-
+      max-width: fit-content;
+    } */
   /* TODO fixa email-form för tablet view */
 }
-
 /* TABLET AND DESKTOP BELOW */
-
-@media screen and (width> 481px) {
+@media screen and (width > 481px) {
   .even-columns {
     grid-auto-flow: column;
     grid-auto-columns: minmax(10px, auto);
   }
-
   .manage-div {
     align-items: flex-start;
   }
-
   .width-60 {
     max-width: 60%;
   }
-
   .app-markets-div {
     flex-direction: row;
     align-items: center;
     gap: 1rem;
   }
-
   .app-features-ul {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-
   .faq-columns {
     grid-template-columns: 2fr 3fr;
     gap: 6em;
   }
-
   .faq {
     gap: 2em;
   }
-
   .faq-question1 {
     border: none;
     border-radius: 0.7em;
@@ -1466,13 +1331,11 @@ input:checked + .slider:before {
     cursor: pointer;
     transition: 0.4s;
   }
-
   .faq-question,
   .faq-question1 > p {
     font-weight: var(--fw-bold);
     color: var(--clr-neutral-900);
   }
-
   .faq > div:not(:nth-child(1)) {
     border: none;
     border-radius: 0.7em;
@@ -1480,19 +1343,16 @@ input:checked + .slider:before {
     padding-block: 1rem;
     padding-inline: 1rem;
   }
-
   .faq > div:last-child {
     border-bottom-left-radius: 0.4rem;
     border-bottom-right-radius: 0.4rem;
   }
-
   .faq-arrow {
     height: 3em;
     background-color: var(--clr-accent-400);
     border-radius: 100vmax;
     box-shadow: 0em -0.2em 1em -0.3em var(--clr-accent-400);
   }
-
   #correct-question {
     margin-bottom: 0;
     border-bottom: 0;
@@ -1500,7 +1360,6 @@ input:checked + .slider:before {
     border-bottom-right-radius: 0;
     box-shadow: 0em -0.2em 0.1em 0.1em var(--clr-neutral-200);
   }
-
   #correct-answer {
     border-top: 0;
     margin-top: 0;
@@ -1508,94 +1367,74 @@ input:checked + .slider:before {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
   }
-
   .app-features-test div div ul {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 55px;
   }
 }
-
 /* DESKTOP BELOW */
-@media screen and (width>768px) {
+@media screen and (width > 768px) {
   button {
     cursor: pointer;
   }
-
   .padding-block-600 {
     padding-block: 2%;
   }
-
   .padding-block-700 {
     padding-block: 5%;
   }
-
   .faq-grid {
     grid-template-columns: 5fr 9fr;
     grid-template-rows: 2fr 5fr;
   }
-
   .faq {
     margin-left: 18%;
     margin-top: 0;
   }
-
   .faq-card-div {
+    height: -moz-fit-content;
     height: fit-content;
   }
-
   .card-faq {
     padding-block: 5%;
   }
-
   :where(.flow-500 > :not(:first-child)) {
     margin-top: var(--flow-spacer, 1rem);
   }
-
   /* Don't know why the code below works but I haven't found a better way to
-  get rid of the padding */
+    get rid of the padding */
   .faq-heading {
     /*     height: 0;
- */
+    */
   }
-
   .mobile {
     display: none;
   }
-
   .width-70 {
     max-width: 95%;
   }
   .width-60 {
     max-width: 85%;
   }
-
   .desktop {
     display: block;
   }
-
   .manage-grid {
-    grid-template-areas:
-      "one four"
-      "two four"
-      "three four";
+    grid-template-areas: "one four" "two four" "three four";
   }
-
   .manage-header {
     margin-top: 15%;
   }
-
   .manage-text-content {
     margin-top: 0;
     height: 24vw;
     padding-bottom: 5%;
     margin-bottom: 5rem;
   }
-
   .manage-p {
     width: 60%;
   }
-
   .app-markets-div {
     margin-top: 12%;
     display: flex;
@@ -1603,99 +1442,64 @@ input:checked + .slider:before {
     width: 75%;
     gap: 5.5%;
   }
-
   .appMarketsLogosDiv {
     margin-top: 0;
     padding-inline: 0em;
     border-radius: 0.7rem;
   }
-
-  .discover-more {
-  }
-
   .logoipsum-div {
     grid-template-columns: repeat(6, minmax(0, 1fr));
   }
-
   .section-app-features {
     padding-bottom: var(--size-950);
   }
-
-  .app-features-ul {
-  }
-
   .narrower-when-wider {
     max-width: 50%;
     margin-inline: auto;
   }
-
-  .make-your-even-columns {
-  }
-
   .make-your-header {
     max-width: 55%;
   }
-
   .faq-grid {
-    grid-template-areas:
-      "faq-header faq-accordion"
-      "contact-icons faq-accordion";
+    grid-template-areas: "faq-header faq-accordion" "contact-icons faq-accordion";
   }
-
   .subscribe-container {
     padding-bottom: 3%;
     grid-template-columns: 4fr 3fr;
   }
-
   .bell-and-header {
     justify-content: flex-start;
     gap: 5%;
   }
-
   .subscribe-heading {
     max-width: 70%;
     margin-left: 0;
     padding-left: 0;
   }
-
   .email-form {
     display: flex;
     align-items: center;
   }
-
-  .email-input {
-  }
-
   .app-features-test > div {
     display: grid;
     grid-template-columns: 5fr 6fr;
   }
-
   .app-features-test div div p {
     padding-top: 2%;
   }
-
   .app-features-test div div ul li div p {
     padding-top: 4%;
   }
-
   .first-section-container {
     grid-template-rows: 2fr 2fr 5fr;
     padding-top: 5%;
     align-content: end;
     grid-template-columns: 2fr 3fr;
-    grid-template-areas:
-      "heading image"
-      "general-content image"
-      "discover image";
+    grid-template-areas: "heading image" "general-content image" "discover image";
   }
   .manage-double-iphones {
     height: 100%;
   }
-
-  .manage-heading {
-  }
-
   .manage-content {
     padding-top: 3%;
     max-width: 80%;
@@ -1704,20 +1508,17 @@ input:checked + .slider:before {
     flex-direction: column;
     justify-content: center;
   }
-
   .app-store {
     display: flex;
     align-items: center;
     gap: 4%;
   }
-
   .app-store button {
     background-color: var(--clr-neutral-900);
     padding-block: 9px;
     padding-inline: 17px;
     border-radius: 9px;
   }
-
   .discover-div {
     display: flex;
     align-items: flex-end;
@@ -1729,7 +1530,6 @@ input:checked + .slider:before {
     background-color: transparent;
   }
 }
-
 @container (768px < width < 1257px) {
   .first-section-container {
     grid-template-rows: 2fr 2fr 2fr;
@@ -1743,7 +1543,6 @@ input:checked + .slider:before {
     padding-bottom: 10px;
   }
 }
-
 .app-features-test {
   padding-bottom: var(--size-900);
 }
@@ -1751,6 +1550,7 @@ input:checked + .slider:before {
 .app-features-test div div p {
   margin-top: 0px;
 }
+
 .app-features-test div div ul {
   margin-top: 10%;
 }
@@ -1776,19 +1576,16 @@ input:checked + .slider:before {
   .only-shown-dark-theme {
     display: none;
   }
-  @media (width < 481px) {
-    .light-mobile {
-      display: block;
-    }
+}
+@media (prefers-color-scheme: light) and (width < 481px) {
+  .light-mobile {
+    display: block;
   }
 }
-
 /*TODO Lägg in en container under som kopplar med .manage-iphones så att 
-top och right beror på om elementet har tillräckligt mycket med yta*/
-@container {
-}
-
-@media (prefers-color-scheme: dark) and (width>768px) {
+  top och right beror på om elementet har tillräckligt mycket med yta*/
+@container {}
+@media (prefers-color-scheme: dark) and (width > 768px) {
   .only-shown-dark-theme {
     display: normal;
   }
@@ -1803,7 +1600,7 @@ top och right beror på om elementet har tillräckligt mycket med yta*/
     padding: 0;
   }
 }
-@media (prefers-color-scheme: dark) and (480px<width<768px) {
+@media (prefers-color-scheme: dark) and (480px < width < 768px) {
   .only-shown-dark-theme {
     display: normal;
   }
@@ -1818,8 +1615,7 @@ top och right beror på om elementet har tillräckligt mycket med yta*/
     padding: 0;
   }
 }
-
-@media (prefers-color-scheme: dark) and (width<481px) {
+@media (prefers-color-scheme: dark) and (width < 481px) {
   .only-shown-dark-theme {
     display: normal;
   }
@@ -1839,4 +1635,4 @@ top och right beror på om elementet har tillräckligt mycket med yta*/
     background-color: hsl(225, 100%, 98%);
     padding: 0;
   }
-}
+}/*# sourceMappingURL=main.css.map */

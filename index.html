@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta type="viewport" content="width=device.width, initial-scale=1.0" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/main.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -36,12 +36,12 @@
                   class="only-shown-dark-theme"
                 />
               </a>
-              <a class="desktop text-primary-700 fw-bold"
-                >Features</a
-              >
+              <a class="desktop text-primary-700 fw-bold">Features</a>
             </div>
             <div class="flex-row-center">
-              <p class="desktop tablet fw-regular text-neutral-900">Dark Mode</p>
+              <p class="desktop tablet fw-regular text-neutral-900">
+                Dark Mode
+              </p>
               <label class="switch">
                 <input type="checkbox" />
                 <span class="slider round"></span>
@@ -131,12 +131,20 @@
               We offer you a new generation of the mobile banking. Save, spend &
               manage money in your pocket.
             </p>
-            <div class="app-store">
+            <div class="app-store only-shown-light-theme">
               <button>
-                <img src="/assets/images/Group.svg" alt="" />
+                <img src="/assets/images/group.svg" alt="" />
               </button>
               <button>
                 <img src="/assets/images/googleplay-light.svg.svg" alt="" />
+              </button>
+            </div>
+            <div class="app-store only-shown-dark-theme">
+              <button>
+                <img src="/assets/images/appstore-dark.svg" alt="" />
+              </button>
+              <button>
+                <img src="/assets/images/googleplay-dark.svg" alt="" />
               </button>
             </div>
           </div>
@@ -186,7 +194,7 @@
           </div>
         </div>
       </section>
-      
+
       <section class="app-features-test" style="">
         <div class="container">
           <img src="/assets/images/3d-iphone.svg" alt="" class="desktop" />
@@ -387,10 +395,11 @@
                   display: flex;
                   align-items: center;
                   gap: 0.25rem;
+                  padding-block: 0.7rem;
                 "
               >
-                <p>Learn more</p>
-                <img src="/assets/images/icon-r.svg" alt="" />
+                <p class="text-static-100">Learn more</p>
+                <img src="/assets/images/learn-grey-arrow.svg" alt="" />
               </button>
             </div>
             <div>
@@ -461,10 +470,11 @@
                   display: flex;
                   align-items: center;
                   gap: 0.25rem;
+                  padding-block: 0.7rem;
                 "
               >
-                <p>Learn more</p>
-                <img src="/assets/images/icon-r.svg" alt="" />
+                <p class="text-static-100">Learn more</p>
+                <img src="/assets/images/learn-grey-arrow.svg" alt="" />
               </button>
             </div>
           </div>
@@ -535,7 +545,7 @@
           <div class="faq-grid flow">
             <div class="flow faq-heading">
               <h2 class="fs-tertiary-heading fw-extra-bold faq-header">
-                Any questions? </br> Check out the FAQs
+                Any questions? Check out the FAQs
               </h2>
               <p class="fs-250 faq-p">
                 Still have unanswered questions and need to get in touch?
@@ -549,12 +559,17 @@
                 <img
                   src="/assets/images/blue-arrow.svg"
                   alt=""
-                  class="faq-arrow mobile"
+                  class="faq-arrow mobile only-shown-light-theme"
                 />
                 <img
                   src="/assets/images/arrow-grey-down.svg"
                   alt=""
-                  class="faq-arrow-down tablet desktop"
+                  class="faq-arrow-down tablet desktop only-shown-light-theme"
+                />
+                <img
+                  src="/assets/images/arrow-dark.svg"
+                  alt=""
+                  class="only-shown-dark-theme tablet desktop"
                 />
               </div>
               <div class="faqanswer mobile">
@@ -574,7 +589,12 @@
                 <img
                   src="/assets/images/arrow-grey-down.svg"
                   alt=""
-                  class="faq-arrow-down"
+                  class="faq-arrow-down only-shown-light-theme"
+                />
+                <img
+                  src="/assets/images/arrow-dark.svg"
+                  alt=""
+                  class="only-shown-dark-theme"
                 />
               </div>
 
@@ -588,7 +608,12 @@
                 <img
                   src="/assets/images/arrow-grey-down.svg"
                   alt=""
-                  class="faq-arrow-down mobile"
+                  class="faq-arrow-down light-mobile"
+                />
+                <img
+                  src="/assets/images/arrow-dark.svg"
+                  alt=""
+                  class="only-shown-dark-theme mobile"
                 />
               </div>
               <div class="faqanswer tablet desktop" id="correct-answer">
@@ -608,7 +633,12 @@
                 <img
                   src="/assets/images/arrow-grey-down.svg"
                   alt=""
-                  class="faq-arrow-down"
+                  class="faq-arrow-down only-shown-light-theme"
+                />
+                <img
+                  src="/assets/images/arrow-dark.svg"
+                  alt=""
+                  class="only-shown-dark-theme"
                 />
               </div>
 
@@ -619,7 +649,12 @@
                 <img
                   src="/assets/images/arrow-grey-down.svg"
                   alt=""
-                  class="faq-arrow-down"
+                  class="faq-arrow-down only-shown-light-theme"
+                />
+                <img
+                  src="/assets/images/arrow-dark.svg"
+                  alt=""
+                  class="only-shown-dark-theme"
                 />
               </div>
 
@@ -628,7 +663,12 @@
                 <img
                   src="/assets/images/arrow-grey-down.svg"
                   alt=""
-                  class="faq-arrow-down"
+                  class="faq-arrow-down only-shown-light-theme"
+                />
+                <img
+                  src="/assets/images/arrow-dark.svg"
+                  alt=""
+                  class="only-shown-dark-theme"
                 />
               </div>
             </div>
@@ -655,7 +695,7 @@
             </div>
             <div class="contact-button mobile" style="margin-inline: auto">
               <button class="button" style="padding-block: 4vw">
-                <p class="text-neutral-100 fs-100">Contact us now</p>
+                <p class="text-static-100 fs-100">Contact us now</p>
               </button>
             </div>
           </div>
@@ -681,6 +721,7 @@
           </div>
           <div class="email-form">
             <form
+              class="subscribe-form"
               style="
                 display: flex;
                 justify-content: space-between;

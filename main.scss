@@ -568,23 +568,23 @@ h3 {
 .manage-heading {
   grid-area: heading;
   /*   background-color: green;
- */
+   */
 }
 .manage-content {
   grid-area: general-content;
   /*   background-color: blue;
- */
+   */
 }
 .discover-div {
   grid-area: discover;
   /*   background-color: red;
- */
+   */
   border: none;
 }
 .manage-double-iphones {
   grid-area: image;
   /*   background-color: yellow;
- */
+   */
 }
 
 .button {
@@ -632,7 +632,7 @@ h3 {
 
   gap: 1rem;
   /*   grid-template-columns: minmax(0, 1fr);
- */
+   */
   grid-template-areas: "logo1 logo2 logo3 logo4 logo5 logo6";
 }
 
@@ -1112,10 +1112,10 @@ input:checked + .slider:before {
 
 @media screen and (481px > width) {
   /*  .manage-grid {
-    grid-template-areas:
-      "one"
-      "two";
-  } */
+      grid-template-areas:
+        "one"
+        "two";
+    } */
 
   .how-section {
     padding-block: 16%;
@@ -1134,7 +1134,7 @@ input:checked + .slider:before {
 
   .mobile {
     /* Must have display: block for the elements that has both mobile ant
-    /* tablets as classes */
+      /* tablets as classes */
 
     display: block;
   }
@@ -1260,8 +1260,8 @@ input:checked + .slider:before {
   }
 
   /* .tablet has to come after .mobile since some elements share both class
-  and this way .tablet overruns .mobile so that the elements sharing them
-  are shown. */
+    and this way .tablet overruns .mobile so that the elements sharing them
+    are shown. */
 
   .tablet {
     display: block;
@@ -1416,8 +1416,8 @@ input:checked + .slider:before {
   }
 
   /* .subscribe-container div h2 {
-    max-width: fit-content;
-  } */
+      max-width: fit-content;
+    } */
 
   /* TODO fixa email-form för tablet view */
 }
@@ -1553,10 +1553,10 @@ input:checked + .slider:before {
   }
 
   /* Don't know why the code below works but I haven't found a better way to
-  get rid of the padding */
+    get rid of the padding */
   .faq-heading {
     /*     height: 0;
- */
+   */
   }
 
   .mobile {
@@ -1784,7 +1784,7 @@ input:checked + .slider:before {
 }
 
 /*TODO Lägg in en container under som kopplar med .manage-iphones så att 
-top och right beror på om elementet har tillräckligt mycket med yta*/
+  top och right beror på om elementet har tillräckligt mycket med yta*/
 @container {
 }
 
